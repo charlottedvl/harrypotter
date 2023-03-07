@@ -52,7 +52,14 @@ public class HelloApplication extends Application {
         // We create a list of known spells and potions
         List<Spell> knownSpells = new ArrayList<>();
         List<Potion> potions = new ArrayList<>();
+
+        // We create the new wizard;
         Wizard player = new Wizard(name, pet, wand, house, knownSpells, potions);
+        System.out.println("Hello " + player.name + ", we are happy to welcome you at Hogwarts School, the Wizard school");
+        System.out.println("The Sorting Hat has attribuated you to " + player.house);
+        System.out.println("Your pet is : " + player.pet);
+        System.out.println("Your wand has : " + player.wand.core + " as a core and mesures : " + player.wand.size + " cm.");
+        System.out.println("Please enjoy your first year and learn as many things as you can.");
     }
 
 }

@@ -4,6 +4,6 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class Wand {
-    private Core core;
-    private int size;
+    Core core;
+    int size;
 }
