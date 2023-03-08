@@ -24,6 +24,8 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         //launch();
+
+        // We initiate the new player
         // We get the name;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Veuillez saisir votre nom");
@@ -50,16 +52,65 @@ public class HelloApplication extends Application {
         Houses house = SortingHat.SortingHouse();
 
         // We create a list of known spells and potions
-        List<Spell> knownSpells = new ArrayList<>();
+        List<Spell> knownSpells = new ArrayList<>(); //We use array list because the size of an arraylist can be modified
         List<Potion> potions = new ArrayList<>();
 
         // We create the new wizard;
         Wizard player = new Wizard(name, pet, wand, house, knownSpells, potions);
-        System.out.println("Hello " + player.name + ", we are happy to welcome you at Hogwarts School, the Wizard school");
-        System.out.println("The Sorting Hat has attribuated you to " + player.house);
-        System.out.println("Your pet is : " + player.pet);
-        System.out.println("Your wand has : " + player.wand.core + " as a core and mesures : " + player.wand.size + " cm.");
+        System.out.println("Hello " + name + ", we are happy to welcome you at Hogwarts School, the Wizard school");
+        System.out.println("The Sorting Hat has attribuated you to " + house);
+        System.out.println("Your pet is : " + pet);
+        System.out.println("Your wand has : " + wand.core + " as a core and mesures : " + wand.size + " cm.");
         System.out.println("Please enjoy your first year and learn as many things as you can.");
+
+        //We initiate the year and the trimester
+        int year = 1;
+        int trimester = 1;
+
+        //We initiate the percent of success of each action (Fireworks is for year 5)
+        float percentSuccess = 0.8F; //It is the same percent for potions and spells, and it evolves in the same way
+        float percentFireworks = 0.35F;
+
+        //Proposition of the 3 types of actions for the first semester
+        int action = ChoiceAction(trimester);
+        if (action == 1){
+
+        } else if (action == 2){
+
+        } else if (action ==3){
+            percentSuccess = SkipClass(percentSuccess);
+            percentFireworks = SkipClassFireworks(percentFireworks);
+        } else {
+            System.out.println("Please enter a valid number");
+        }
+
     }
 
+    public static int ChoiceAction(int trimester){
+        String number ="";
+        if (trimester == 1){
+            number = "first";
+        } else if (trimester == 2){
+            number = "second";
+        } else {
+            number = "third";
+        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What do you want to do of your " + number + " trimester at Hogwarts ? (Please enter the number of the action)");
+        System.out.println("1. Follow the wizarding lesson");
+        System.out.println("2. Follow the potion lesson");
+        System.out.println("3. Skip class and have fun");
+        int action = scanner.nextInt();
+        return action;
+    }
+
+    public static float SkipClass(float percentSuccess){
+        percentSuccess = (float) (percentSuccess - 0.05);
+        return percentSuccess;
+    }
+
+    public static float SkipClassFireworks(float percentFireworks){
+        percentFireworks = (float) (percentFireworks + 0.05);
+        return percentFireworks;
+    }
 }

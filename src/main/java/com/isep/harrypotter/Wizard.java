@@ -6,12 +6,27 @@ import java.util.List;
 
 @AllArgsConstructor
 public class Wizard extends Character{
-    String name;
-    Pet pet;
-    Wand wand;
-    House.Houses house;
+    private String name;
+    private Pet pet;
+    private Wand wand;
+    private House.Houses house;
     private List<Spell> knownSpells;
     private List<Potion> potions;
+    public String getName() {
+        return this.name;
+    }
+
+    public Pet getPet() {
+        return this.pet;
+    }
+
+    public Wand getWand() {
+        return this.wand;
+    }
+
+    public House.Houses getHouse() {
+        return this.house;
+    }
 
     public void defend(Wizard wizard){
 
