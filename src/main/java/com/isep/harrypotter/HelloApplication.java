@@ -68,20 +68,42 @@ public class HelloApplication extends Application {
         int trimester = 1;
 
         //We initiate the percent of success of each action (Fireworks is for year 5)
-        float percentSuccess = 0.8F; //It is the same percent for potions and spells, and it evolves in the same way
+        float percentSpells = 0.75F;
+        float percentPotion = 0.75F;
         float percentFireworks = 0.35F;
+
+        // We initiate the number of Health Point (HP) and Damage Point (DP)
+        int hp = 100;
+        int dp = 100;
+
+        // We initiate the damage and the defense
+        float damage = 1F;
+        float defense = 1F;
+
+        // We change some attributes according to the house you are in
+        switch (house){
+            case Ravenclaw -> percentSpells = 0.85F;
+            case Slytherin -> damage = 1.2F;
+            case Gryffindor -> defense = 1.2F;
+            case Hufflepuff -> percentPotion = 0.85F;
+            default -> System.out.println("An error occurred. Please restart the game");
+        }
 
         //Proposition of the 3 types of actions for the first semester
         int action = ChoiceAction(trimester);
-        if (action == 1){
-
-        } else if (action == 2){
-
-        } else if (action ==3){
-            percentSuccess = SkipClass(percentSuccess);
-            percentFireworks = SkipClassFireworks(percentFireworks);
-        } else {
-            System.out.println("Please enter a valid number");
+        switch (action){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                percentSpells = SkipClass(percentSpells);
+                percentPotion = SkipClass(percentPotion);
+                percentFireworks = SkipClassFireworks(percentFireworks);
+                break;
+            default:
+                System.out.println("Please enter a valid number");
+                break;
         }
 
     }
@@ -97,7 +119,7 @@ public class HelloApplication extends Application {
         }
         Scanner scanner = new Scanner(System.in);
         System.out.println("What do you want to do of your " + number + " trimester at Hogwarts ? (Please enter the number of the action)");
-        System.out.println("1. Follow the wizarding lesson");
+        System.out.println("1. Follow the sorcery lesson");
         System.out.println("2. Follow the potion lesson");
         System.out.println("3. Skip class and have fun");
         int action = scanner.nextInt();
