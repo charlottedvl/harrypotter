@@ -72,22 +72,17 @@ public class HelloApplication extends Application {
         float percentPotion = 0.75F;
         float percentFireworks = 0.35F;
 
-        // We initiate the number of Health Point (HP) and Damage Point (DP)
+        // We initiate the number of Health Point (HP) Defense Point and Damage Point
         int hp = 100;
-        int dp = 100;
+        int damagePoint = 100;
+        int defensePoint = 100;
 
-        // We initiate the damage and the defense
+        // We initiate the damage
         float damage = 1F;
-        float defense = 1F;
+
 
         // We change some attributes according to the house you are in
-        switch (house){
-            case Ravenclaw -> percentSpells = 0.85F;
-            case Slytherin -> damage = 1.2F;
-            case Gryffindor -> defense = 1.2F;
-            case Hufflepuff -> percentPotion = 0.85F;
-            default -> System.out.println("An error occurred. Please restart the game");
-        }
+        House.SpecificationHouse(house, percentSpells, percentPotion, damage, defensePoint);
 
         //Proposition of the 3 types of actions for the first semester
         int action = ChoiceAction(trimester);
