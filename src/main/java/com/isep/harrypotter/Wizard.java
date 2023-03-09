@@ -23,7 +23,12 @@ public class Wizard extends Character{
     private float damage = 1F;
 
     public Wizard(String name, Pet pet, Wand wand, House.Houses house, List<Spell> knownSpells, List<Potion> potions){
-
+        this.name = name;
+        this.pet = pet;
+        this.wand = wand;
+        this.house = house;
+        this.knownSpells = knownSpells;
+        this.potions = potions;
     }
 
 }
