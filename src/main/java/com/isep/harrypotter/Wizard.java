@@ -12,6 +12,29 @@ public class Wizard extends Character{
     private House.Houses house;
     private List<Spell> knownSpells;
     private List<Potion> potions;
+    float percentSpells;
+    float percentPotion;
+    float percentFireworks;
+    int hp;
+    int defensePoint;
+    float damage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public String getName() {
         return this.name;
     }

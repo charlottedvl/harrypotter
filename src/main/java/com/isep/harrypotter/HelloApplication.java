@@ -67,18 +67,7 @@ public class HelloApplication extends Application {
         int year = 1;
         int trimester = 1;
 
-        //We initiate the percent of success of each action (Fireworks is for year 5)
-        float percentSpells = 0.75F;
-        float percentPotion = 0.75F;
-        float percentFireworks = 0.35F;
 
-        // We initiate the number of Health Point (HP) Defense Point and Damage Point
-        int hp = 100;
-        int damagePoint = 100;
-        int defensePoint = 100;
-
-        // We initiate the damage
-        float damage = 1F;
 
 
         // We change some attributes according to the house you are in

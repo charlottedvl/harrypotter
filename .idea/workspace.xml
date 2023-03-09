@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Initialization : pourcentage, année et actions">
+    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Specifications">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Wizard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +87,9 @@
       <workItem from="1678196061729" duration="2874000" />
       <workItem from="1678203431745" duration="733000" />
       <workItem from="1678263574881" duration="4499000" />
-      <workItem from="1678278407325" duration="3517000" />
+      <workItem from="1678278407325" duration="3567000" />
+      <workItem from="1678293943011" duration="2656000" />
+      <workItem from="1678354965143" duration="1499000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1678195713313</created>
@@ -109,7 +112,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678268344428</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Specifications house">
+      <created>1678282898102</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678282898102</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Specifications">
+      <created>1678297157857</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678297157857</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +136,8 @@
     <MESSAGE value="Initialization" />
     <MESSAGE value="Initialization : création perso" />
     <MESSAGE value="Initialization : pourcentage, année et actions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initialization : pourcentage, année et actions" />
+    <MESSAGE value="Specifications house" />
+    <MESSAGE value="Specifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="Specifications" />
   </component>
 </project>
