@@ -1,57 +1,29 @@
 package com.isep.harrypotter;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@AllArgsConstructor
+@Getter @Setter
 public class Wizard extends Character{
+
     private String name;
     private Pet pet;
     private Wand wand;
     private House.Houses house;
     private List<Spell> knownSpells;
     private List<Potion> potions;
-    float percentSpells;
-    float percentPotion;
-    float percentFireworks;
-    int hp;
-    int defensePoint;
-    float damage;
+    private float percentSpells = 0.75F;
+    private float percentPotion = 0.75F;
+    private float percentFireworks = 0.35F;
+    private int hp = 100;
+    private int defensePoint = 100;
+    private float damage = 1F;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public String getName() {
-        return this.name;
-    }
-
-    public Pet getPet() {
-        return this.pet;
-    }
-
-    public Wand getWand() {
-        return this.wand;
-    }
-
-    public House.Houses getHouse() {
-        return this.house;
-    }
-
-    public void defend(Wizard wizard){
+    public Wizard(String name, Pet pet, Wand wand, House.Houses house, List<Spell> knownSpells, List<Potion> potions){
 
     }
+
 }

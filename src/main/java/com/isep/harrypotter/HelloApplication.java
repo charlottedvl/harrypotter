@@ -71,7 +71,7 @@ public class HelloApplication extends Application {
 
 
         // We change some attributes according to the house you are in
-        House.SpecificationHouse(house, percentSpells, percentPotion, damage, defensePoint);
+        House.SpecificationHouse(house, player.percentSpells, player.percentPotion, player.damage, player.defensePoint);
 
         //Proposition of the 3 types of actions for the first semester
         int action = ChoiceAction(trimester);
@@ -81,9 +81,9 @@ public class HelloApplication extends Application {
             case 2:
                 break;
             case 3:
-                percentSpells = SkipClass(percentSpells);
-                percentPotion = SkipClass(percentPotion);
-                percentFireworks = SkipClassFireworks(percentFireworks);
+                player.percentSpells = SkipClass(player.percentSpells);
+                player.percentPotion = SkipClass(player.percentPotion);
+                player.percentFireworks = SkipClassFireworks(player.percentFireworks);
                 break;
             default:
                 System.out.println("Please enter a valid number");
