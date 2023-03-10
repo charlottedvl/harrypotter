@@ -74,7 +74,7 @@ public class HelloApplication extends Application {
         House.SpecificationHouse(house, player.getPercentSpells(), player.getPercentPotion(), player.getDamage(), player.getDefensePoint());
 
         //Proposition of the 3 types of actions for the first semester
-        int action = ChoiceAction(trimester);
+        int action = Year.ChoiceAction(trimester);
         switch (action){
             case 1:
                 break;
@@ -92,23 +92,7 @@ public class HelloApplication extends Application {
 
     }
 
-    public static int ChoiceAction(int trimester){
-        String number ="";
-        if (trimester == 1){
-            number = "first";
-        } else if (trimester == 2){
-            number = "second";
-        } else {
-            number = "third";
-        }
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("What do you want to do of your " + number + " trimester at Hogwarts ? (Please enter the number of the action)");
-        System.out.println("1. Follow the sorcery lesson");
-        System.out.println("2. Follow the potion lesson");
-        System.out.println("3. Skip class and have fun");
-        int action = scanner.nextInt();
-        return action;
-    }
+
 
     public static float SkipClass(float percentSuccess){
         percentSuccess = (float) (percentSuccess - 0.05);
