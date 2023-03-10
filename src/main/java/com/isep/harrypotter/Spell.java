@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 @Getter @Setter
 public class Spell extends AbstractSpell{
@@ -28,20 +29,41 @@ public class Spell extends AbstractSpell{
 
 
 
-    public void attendSpellClass(Year year, ArrayList<Spell> Spells){
+    public String attendSpellClass(Year year, ArrayList<Spell> spells, Wizard player){
         System.out.println("You have chosen to attend the sorcery class");
         System.out.println("This year, you can learn one of the many spells below. Please enter the name of the spell you want to learn");
         int i = 1;
-        for (Spell element : Spells) {
-            if (element.getYear() == year){
-                System.out.println(i + ". " + element.getName() + " : " + element.getDescription());
+        for (Spell spell : spells) {
+            if (spell.getYear() == year){
+                System.out.println(i + ". " + spell.getName() + " : " + spell.getDescription());
                 i++;
             }
         }
+        Scanner scanner = new Scanner(System.in);
+        String spell = scanner.nextLine();
+        return spell;
     }
 
-
-    public void learnSpell(Spell spell){
+    public void learnSpell(Spell spell, Wizard player, Year year, ArrayList<Spell> spells){
+        System.out.println("Are you sur you want to learn " + spell.getName() + " ?");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
+        Scanner scanner = new Scanner(System.in);
+        int validate = scanner.nextInt();
+        switch (validate){
+            case 1 :
+                player.getKnownSpells().add(spell);
+                System.out.println("You have successfully learn " + spell.getName());
+                break;
+            case 2:
+                System.out.println("Please choose another spell from the list");;
+                attendSpellClass(year, spells, player);
+                break;
+            default :
+                System.out.println("Please enter a valide number");
+                learnSpell(spell, player, year, spells);
+                break;
+        }
 
     }
 
