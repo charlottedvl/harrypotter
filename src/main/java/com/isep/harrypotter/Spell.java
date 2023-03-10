@@ -67,6 +67,7 @@ public class Spell extends AbstractSpell{
         switch (validate){
             case 1 :
                 player.getKnownSpells().add(spell);
+                spells.remove(spell);
                 System.out.println("You have successfully learn " + spell.getName());
                 break;
             case 2:

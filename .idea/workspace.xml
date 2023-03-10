@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Specifications">
+    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Year Progress">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Spell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Wizard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="create_spells" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -73,6 +76,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -93,7 +99,11 @@
       <workItem from="1678354965143" duration="1517000" />
       <workItem from="1678358539640" duration="3000" />
       <workItem from="1678359101366" duration="2387000" />
-      <workItem from="1678370547908" duration="1061000" />
+      <workItem from="1678370547908" duration="1604000" />
+      <workItem from="1678433345801" duration="1719000" />
+      <workItem from="1678435075446" duration="9462000" />
+      <workItem from="1678444561401" duration="297000" />
+      <workItem from="1678444874672" duration="625000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1678195713313</created>
@@ -144,7 +154,42 @@
       <option name="project" value="LOCAL" />
       <updated>1678361600896</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Specifications">
+      <created>1678374924708</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678374924708</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Create spells mechanisms">
+      <created>1678440388796</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678440388796</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Create spells mechanisms">
+      <created>1678441343355</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678441343355</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Learning spells">
+      <created>1678444310349</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1678444310349</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Year Progress">
+      <created>1678444351113</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1678444351113</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +200,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="create_spells" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -167,6 +224,9 @@
     <MESSAGE value="Initialization : pourcentage, année et actions" />
     <MESSAGE value="Specifications house" />
     <MESSAGE value="Specifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="Specifications" />
+    <MESSAGE value="Create spells mechanisms" />
+    <MESSAGE value="Learning spells" />
+    <MESSAGE value="Year Progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="Year Progress" />
   </component>
 </project>
