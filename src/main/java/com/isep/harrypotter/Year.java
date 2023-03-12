@@ -30,8 +30,7 @@ public class Year {
             int action = ChoiceAction(trimester);
             switch (action){
                 case 1:
-                    String nameSpell = Spell.attendSpellClass(year, spells, player);
-                    Spell spell = Spell.searchSpell(nameSpell, spells, year, player);
+                    Spell spell = Spell.attendSpellClass(year, spells, player);
                     Spell.learnSpell(spell, player, year, spells);
                     break;
                 case 2:
