@@ -56,7 +56,7 @@ public class HelloApplication extends Application {
         List<Potion> potions = new ArrayList<>();
 
         // We create the new wizard;
-        Wizard player = new Wizard(name, pet, wand, house, knownSpells, potions);
+        Wizard player = new Wizard(name, pet, wand, house, knownSpells, potions, 100);
         System.out.println("Hello " + name + ", we are happy to welcome you at Hogwarts School, the Wizard school");
         System.out.println("The Sorting Hat has attribuated you to " + house);
         System.out.println("Your pet is : " + pet);
@@ -84,6 +84,23 @@ public class HelloApplication extends Application {
     }
 
 
-
+    public static int choice(int i, int j){
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        while (true) {
+            if (scanner.hasNextInt()) {
+                choice = scanner.nextInt();
+                if (choice >= j && choice <= i - 1) {
+                    break;
+                } else {
+                    System.out.println("Please enter a valid number between 1 and " + (i-1));
+                }
+            } else {
+                System.out.println("Please enter a valid integer");
+                scanner.next();
+            }
+        }
+        return choice;
+    }
 
 }

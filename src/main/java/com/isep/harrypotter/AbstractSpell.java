@@ -11,5 +11,6 @@ public abstract class AbstractSpell{
     private int damage;
     private String description;
     private int year;
+    private String type;
 
 }

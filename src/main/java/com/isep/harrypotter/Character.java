@@ -1,7 +1,32 @@
 package com.isep.harrypotter;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
+import java.util.Scanner;
+
+@Getter @Setter
 public abstract class Character {
-    public void attack(Character character){
+    private String name;
+    private List<Spell> knownSpells;
+    private int hp;
+    private float percentSpells = 0.75F;
+    public Character(String name, List<Spell> knownSpells, int hp){
+        this.name = name;
+        this.knownSpells = knownSpells;
+        this.hp = hp;
+
 
     }
+
+    public static void attack(Character character) {
+        if (character instanceof Wizard) {
+            Wizard.attack((Wizard) character);
+        } else if (character instanceof AbstractEnemy) {
+            AbstractEnemy.attack();
+        }
+    }
+
 }
