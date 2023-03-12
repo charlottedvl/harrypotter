@@ -13,17 +13,18 @@ import java.util.Scanner;
 public class Spell extends AbstractSpell{
 
 
-    public Spell(String name, int damage, String description, int year) {
-        super(name, damage, description, year);
+    public Spell(String name, int damage, String description, int year, String type) {
+
+        super(name, damage, description, year, type);
     }
 
 
     public static ArrayList<Spell> createSpells(){
         ArrayList<Spell> spells = new ArrayList<>();
         // We create the spells
-        Spell lumos = new Spell("Lumos", 0, "Create a light at the end of your wand. Useful to see in the dark... and to reassure you", 1);
-        Spell allohomora = new Spell("Allohomora", 0, "Open any lock you want", 1);
-        Spell wingardium_Leviosa = new Spell("Wingardium Leviosa", 0, "Levitate any object, provided you pronounce the magic formula correctly", 1);
+        Spell lumos = new Spell("Lumos", 0, "Create a light at the end of your wand. Useful to see in the dark... and to reassure you", 1, "none");
+        Spell allohomora = new Spell("Allohomora", 0, "Open any lock you want", 1, "none");
+        Spell wingardium_Leviosa = new Spell("Wingardium Leviosa", 0, "Levitate any object, provided you pronounce the magic formula correctly", 1, "none");
         // We add them to the list
         spells.add(lumos);
         spells.add(allohomora);
