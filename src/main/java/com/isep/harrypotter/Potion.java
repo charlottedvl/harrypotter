@@ -1,6 +1,7 @@
 package com.isep.harrypotter;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import lombok.AllArgsConstructor;
@@ -80,6 +81,21 @@ public class Potion {
                 learnPotion(potion, player, year, allPotions);
                 break;
         }
+
+    }
+
+
+    public static int showPotions(List<Spell> spells, Year year){
+        int i = 1;
+        for (Spell spell : spells) {
+            if (spell.getYear() <= year.getNumberYear()){
+                System.out.println(i + ". " + spell.getName() + " : " + spell.getDescription());
+                i++;
+            }
+        }
+        return HelloApplication.choice(i);
+    }
+    public static void usePotion(){
 
     }
 }

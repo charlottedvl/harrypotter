@@ -34,12 +34,12 @@ public class Wizard extends Character{
         System.out.println("Do you want to use potions or spells ?");
         System.out.println("1. Potions");
         System.out.println("2. Spells");
-        int choice = HelloApplication.choice(2, 1);
+        int choice = HelloApplication.choice(2);
         int i =0 ;
         switch (choice) {
             case 1:
                 System.out.println("0. I changed my mind");
-                i = Potion.showPotions();
+                i = Potion.showPotions(player.getKnownSpells(), year);
                 if (i == 0) {
                     attack(player, year);
                 } else {
@@ -48,7 +48,7 @@ public class Wizard extends Character{
                 }
             case 2:
                 System.out.println("0. I changed my mind");
-                i = Spell.showSpells(player.getKnownSpells(), year);
+                Spell.showSpells(player.getKnownSpells(), year, "attack");
                 if (i == 0) {
                     attack(player, year);
                 } else {

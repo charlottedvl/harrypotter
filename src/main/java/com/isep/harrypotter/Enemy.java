@@ -1,7 +1,10 @@
 package com.isep.harrypotter;
 
+import java.util.List;
+
 public class Enemy extends AbstractEnemy{
-    public Enemy(String name, int hp, String allegiance) {
-        super(name, hp, allegiance);
+    public Enemy(String name, List<Spell> knownSpells, int hp) {
+
+        super(name, knownSpells, hp);
     }
 }

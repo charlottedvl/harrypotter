@@ -84,16 +84,16 @@ public class HelloApplication extends Application {
     }
 
 
-    public static int choice(int i, int j){
+    public static int choice(int i){
         Scanner scanner = new Scanner(System.in);
         int choice;
         while (true) {
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
-                if (choice >= j && choice <= i - 1) {
+                if (choice >= 1 && choice <= i) {
                     break;
                 } else {
-                    System.out.println("Please enter a valid number between 1 and " + (i-1));
+                    System.out.println("Please enter a valid number between 1 and " + i);
                 }
             } else {
                 System.out.println("Please enter a valid integer");
