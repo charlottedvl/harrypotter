@@ -73,11 +73,12 @@ public class HelloApplication extends Application {
         // We change some attributes according to the house you are in
         House.SpecificationHouse(house, player.getPercentSpells(), player.getPercentPotion(), player.getDamage(), player.getDefensePoint());
 
-        // We create the list of spells you can learn during all you school years
+        // We create the lists of spells and potions you can learn during all you school years
         ArrayList<Spell> spells = Spell.createSpells();
+        ArrayList<Potion> allPotions = Potion.createPotions();
 
         //We start the first year
-        Year.yearProgress(years.get(0), player, spells);
+        Year.yearProgress(years.get(0), player, spells, allPotions);
 
 
     }

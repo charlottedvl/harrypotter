@@ -23,7 +23,7 @@ public class Year {
         return years;
     }
 
-    public static void yearProgress(Year year, Wizard player, ArrayList<Spell> spells){
+    public static void yearProgress(Year year, Wizard player, ArrayList<Spell> spells, ArrayList<Potion> allPotions){
         System.out.println(year.name);
         System.out.println("Welcome to your " + year.number + " year at Hogwarts School !");
         for (int trimester = 1; trimester < 4; trimester++){
@@ -34,6 +34,8 @@ public class Year {
                     Spell.learnSpell(spell, player, year, spells);
                     break;
                 case 2:
+                    Potion potion = Potion.attendPotionClass(year, allPotions, player);
+                    Potion.learnPotion(potion, player, year, allPotions);
                     break;
                 case 3:
                     player.setPercentSpells(SkipClass(player.getPercentSpells()));
