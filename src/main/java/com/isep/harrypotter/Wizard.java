@@ -30,7 +30,7 @@ public class Wizard extends Character{
 
     }
 
-    public static void attack(Wizard player){
+    public static void attack(Wizard player, Year year){
         System.out.println("Do you want to use potions or spells ?");
         System.out.println("1. Potions");
         System.out.println("2. Spells");
@@ -41,16 +41,16 @@ public class Wizard extends Character{
                 System.out.println("0. I changed my mind");
                 i = Potion.showPotions();
                 if (i == 0) {
-                    attack(player);
+                    attack(player, year);
                 } else {
                     Potion.usePotion();
                     break;
                 }
             case 2:
                 System.out.println("0. I changed my mind");
-                i = Spell.showKnownSpells();
+                i = Spell.showSpells(player.getKnownSpells(), year);
                 if (i == 0) {
-                    attack(player);
+                    attack(player, year);
                 } else {
                     Spell.useSpell();
                     break;

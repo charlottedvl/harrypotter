@@ -21,9 +21,9 @@ public abstract class Character {
 
     }
 
-    public static void attack(Character character) {
+    public static void attack(Character character, Year year) {
         if (character instanceof Wizard) {
-            Wizard.attack((Wizard) character);
+            Wizard.attack((Wizard) character, year);
         } else if (character instanceof AbstractEnemy) {
             AbstractEnemy.attack();
         }

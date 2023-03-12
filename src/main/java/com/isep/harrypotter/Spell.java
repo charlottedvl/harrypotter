@@ -37,13 +37,7 @@ public class Spell extends AbstractSpell{
     public static Spell attendSpellClass(Year year, ArrayList<Spell> spells, Wizard player){
         System.out.println("You have chosen to attend the sorcery class");
         System.out.println("This year, you can learn one of the many spells below. Please enter the name of the spell you want to learn");
-        int i = 1;
-        for (Spell spell : spells) {
-            if (spell.getYear() == year.getNumberYear()){
-                System.out.println(i + ". " + spell.getName() + " : " + spell.getDescription());
-                i++;
-            }
-        }
+        int i = showSpells((List<Spell>) spells, year);
         Scanner scanner = new Scanner(System.in);
         String nameSpell = scanner.nextLine();
         return searchSpell(nameSpell, spells, year, player);
@@ -85,7 +79,7 @@ public class Spell extends AbstractSpell{
     }
 
 
-    public static int showSpells(ArrayList<Spell> spells, Year year){
+    public static int showSpells(List<Spell> spells, Year year){
         int i = 1;
         for (Spell spell : spells) {
             if (spell.getYear() <= year.getNumberYear()){
@@ -93,6 +87,6 @@ public class Spell extends AbstractSpell{
                 i++;
             }
         }
-        HelloApplication.choice(i,1);
+        return HelloApplication.choice(i,1);
     }
 }
