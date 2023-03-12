@@ -81,7 +81,17 @@ public class Spell extends AbstractSpell{
                 learnSpell(spell, player, year, spells);
                 break;
         }
-
     }
 
+
+    public static int showSpells(ArrayList<Spell> spells, Year year){
+        int i = 1;
+        for (Spell spell : spells) {
+            if (spell.getYear() <= year.getNumberYear()){
+                System.out.println(i + ". " + spell.getName() + " : " + spell.getDescription());
+                i++;
+            }
+        }
+        HelloApplication.choice(i,1);
+    }
 }
