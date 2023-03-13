@@ -38,9 +38,9 @@ public class Spell extends AbstractSpell{
         System.out.println("You have chosen to attend the sorcery class");
         System.out.println("This year, you can learn one of the many spells below. Please enter the number of the spell you want to learn");
         int i=1;
-        showSpells(spells, year, "attack");
-        showSpells(spells, year, "defense");
-        showSpells(spells, year, "none");
+        showSpells(spells, year, "attack", i);
+        showSpells(spells, year, "defense", i);
+        showSpells(spells, year, "none", i);
         int choice = HelloApplication.choice(spells.size());
         return spells.get(choice-1);
     }
@@ -81,8 +81,7 @@ public class Spell extends AbstractSpell{
     }
 
 
-    public static void showSpells(List<Spell> spells, Year year, String type){
-        int i = 1;
+    public static void showSpells(List<Spell> spells, Year year, String type, int i){
         for (Spell spell : spells) {
             if (spell.getYear() <= year.getNumberYear() && spell.getType().equalsIgnoreCase(type)){
                 System.out.println(i + ". " + spell.getName() + " : " + spell.getDescription());

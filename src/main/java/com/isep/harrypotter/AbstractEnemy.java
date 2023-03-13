@@ -3,9 +3,12 @@ package com.isep.harrypotter;
 import java.util.List;
 
 public abstract class AbstractEnemy extends Character {
-    public AbstractEnemy(String name, List<Spell> knownSpells, int hp) {
 
-        super(name, knownSpells, hp);
+    private Year year;
+    public AbstractEnemy(String name, List<Spell> knownSpells, int hp, int maxHP, Year year) {
+
+        super(name, knownSpells, hp, maxHP);
+        this.year = year;
     }
 
     public static void attack(){

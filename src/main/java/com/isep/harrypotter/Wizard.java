@@ -1,11 +1,9 @@
 package com.isep.harrypotter;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.Scanner;
 
 @Getter @Setter
 public class Wizard extends Character{
@@ -20,8 +18,8 @@ public class Wizard extends Character{
     private int defensePoint = 100;
     private float damage = 1F;
 
-    public Wizard(String name, Pet pet, Wand wand, House.Houses house, List<Spell> knownSpells, List<Potion> potions, int hp){
-        super(name, knownSpells, hp);
+    public Wizard(String name, Pet pet, Wand wand, House.Houses house, List<Spell> knownSpells, List<Potion> potions, int hp, int maxHP){
+        super(name, knownSpells, hp, maxHP);
         this.pet = pet;
         this.wand = wand;
         this.house = house;
@@ -35,21 +33,23 @@ public class Wizard extends Character{
         System.out.println("1. Potions");
         System.out.println("2. Spells");
         int choice = HelloApplication.choice(2);
-        int i =0 ;
+        int i = 2;
         switch (choice) {
             case 1:
-                System.out.println("0. I changed my mind");
-                i = Potion.showPotions(player.getKnownSpells(), year);
-                if (i == 0) {
+                System.out.println("1. I changed my mind");
+                choice = Potion.showPotions(player.getPotions(), year, i, "attack");
+                if (choice == 1) {
                     attack(player, year);
                 } else {
                     Potion.usePotion();
                     break;
                 }
             case 2:
-                System.out.println("0. I changed my mind");
-                Spell.showSpells(player.getKnownSpells(), year, "attack");
-                if (i == 0) {
+                System.out.println("1. I changed my mind");
+                Spell.showSpells(player.getKnownSpells(), year, "attack", i);
+                Spell.showSpells(player.getKnownSpells(), year, "none", i);
+                choice = HelloApplication.choice(i);
+                if (choice == 1) {
                     attack(player, year);
                 } else {
                     Spell.useSpell();

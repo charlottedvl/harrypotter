@@ -18,7 +18,7 @@ public class Year {
 
     public static ArrayList<Year> createYear(){
         ArrayList<Year> years = new ArrayList<Year>();
-        Year yearOne = new Year(1, "first", "The Philosopher's Stone", "Dungeon's toilets" );
+        Year yearOne = new Year(1, "first", "The Philosopher's Stone", "Dungeon's toilets");
         years.add(yearOne);
         return years;
     }
@@ -75,4 +75,21 @@ public class Year {
         percentFireworks = (float) (percentFireworks + 0.05);
         return percentFireworks;
     }
+
+    public static void StartFight(Year year, Wizard player){
+        System.out.println("Oh no ! It seems that you are in trouble. In the dungeon, the shadows scares you. You become to be paranoid and hurt yourself.");
+        System.out.println("Try to reassure yourself or flee ! You have against you two shadows");
+        Enemy shadowOne = Enemy.createEnemyFightOne("ShadowOne", 70, 70, year);
+        Enemy shadowTwo = Enemy.createEnemyFightOne("ShadowTwo", 70, 70, year);
+        fight(player, shadowOne, shadowTwo, year);
+    }
+
+    public static void fight(Wizard player, Enemy enemyOne, Enemy enemyTwo, Year year){
+        while (player.getHp()>0 && (enemyOne.getHp()>0 || enemyTwo.getHp()>0)){
+            Character.attack(player, year);
+            Character.attack(enemyOne, year);
+            Character.attack(enemyTwo, year);
+        }
+    }
+
 }
