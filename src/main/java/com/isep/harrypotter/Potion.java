@@ -95,6 +95,16 @@ public class Potion {
         }
         return HelloApplication.choice(i);
     }
+    public static void choosePotion(Wizard player, Year year, AbstractEnemy enemy){
+        System.out.println("1. I changed my mind");
+        int j = 2;
+        int choice = Potion.showPotions(player.getPotions(), year, j, "attack");
+        if (choice == 1) {
+            Wizard.attack(player, year, enemy);
+        } else {
+            Potion.usePotion();
+        }
+    }
     public static void usePotion(){
 
     }

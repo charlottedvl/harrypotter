@@ -79,16 +79,23 @@ public class Year {
     public static void StartFight(Year year, Wizard player){
         System.out.println("Oh no ! It seems that you are in trouble. In the dungeon, the shadows scares you. You become to be paranoid and hurt yourself.");
         System.out.println("Try to reassure yourself or flee ! You have against you two shadows");
-        Enemy shadowOne = Enemy.createEnemyFightOne("ShadowOne", 70, 70, year);
-        Enemy shadowTwo = Enemy.createEnemyFightOne("ShadowTwo", 70, 70, year);
+        Enemy shadowOne = Enemy.createEnemyFightOne("Shadow", 70, 70, year);
+        Enemy shadowTwo = Enemy.createEnemyFightOne("Shadow", 70, 70, year);
         fight(player, shadowOne, shadowTwo, year);
     }
 
     public static void fight(Wizard player, Enemy enemyOne, Enemy enemyTwo, Year year){
         while (player.getHp()>0 && (enemyOne.getHp()>0 || enemyTwo.getHp()>0)){
-            Character.attack(player, year);
-            Character.attack(enemyOne, year);
-            Character.attack(enemyTwo, year);
+            Character.attack(player, year, enemyOne, enemyTwo);
+            if (player.getStatus() != "dead" && enemyOne.getStatus() != "dead"){
+                Character.attack(enemyOne, year, player, enemyTwo);
+            }
+            if (player.getStatus() != "dead" && enemyTwo.getStatus() != "dead") {
+                Character.attack(enemyTwo, year, player, enemyOne);
+            }
+        }
+        if (enemyOne.getStatus() == "dead" && enemyTwo.getStatus()=="dead"){
+            System.out.println("The fight is over ! You have succeeded.");
         }
     }
 

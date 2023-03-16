@@ -56,8 +56,8 @@ public class HelloApplication extends Application {
         int maxHP = 100;
 
         // We create a list of known spells and potions
-        List<Spell> knownSpells = new ArrayList<>(); //We use array list because the size of an arraylist can be modified
-        List<Potion> potions = new ArrayList<>();
+        List<Spell> knownSpells = new ArrayList<Spell>();
+        List<Potion> potions = new ArrayList<Potion>();
 
         // We create the new wizard;
         Wizard player = new Wizard(name, pet, wand, house, knownSpells, potions, hp, maxHP);
