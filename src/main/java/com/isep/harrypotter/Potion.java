@@ -14,14 +14,15 @@ public class Potion {
     private int damage;
     private String description;
     private int year;
+    private String type;
 
     public static ArrayList<Potion> createPotions(){
         ArrayList<Potion> allPotions = new ArrayList<>();
         //We create the potions
-        Potion forgetfulness = new Potion ("Forgetfulness Potion", 0, "Make your opponent lose memory. it increase confusion, useful when you don't want your enemy to attack !", 1);
-        Potion wiggenweld = new Potion ("Wiggenweld Potion", 0, "A potion that help you heal from your injuries", 1);
-        Potion antidote = new Potion ("Antidote to Common Poisons", 0, "Suppress common poisons from your body", 1);
-        Potion fire  = new Potion ("Fire Potion", 30, "Create a huge fire that burn enemies and light up the place", 1);
+        Potion forgetfulness = new Potion ("Forgetfulness Potion", 0, "Make your opponent lose memory. it increase confusion, useful when you don't want your enemy to attack !", 1, "attack");
+        Potion wiggenweld = new Potion ("Wiggenweld Potion", 0, "A potion that help you heal from your injuries", 1, "defense");
+        Potion antidote = new Potion ("Antidote to Common Poisons", 0, "Suppress common poisons from your body", 1, "defense");
+        Potion fire  = new Potion ("Fire Potion", 30, "Create a huge fire that burn enemies and light up the place", 1, "attack");
         //We add them to the list
         allPotions.add(forgetfulness);
         allPotions.add(wiggenweld);
@@ -85,15 +86,24 @@ public class Potion {
     }
 
 
-    public static int showPotions(List<Spell> spells, Year year){
-        int i = 1;
-        for (Spell spell : spells) {
-            if (spell.getYear() <= year.getNumberYear()){
-                System.out.println(i + ". " + spell.getName() + " : " + spell.getDescription());
+    public static int showPotions(List<Potion> potions, Year year, int i, String type){
+        for (Potion potion : potions) {
+            if (potion.getYear() <= year.getNumberYear() && potion.getType().equalsIgnoreCase(type)){
+                System.out.println(i + ". " + potion.getName() + " : " + potion.getDescription());
                 i++;
             }
         }
         return HelloApplication.choice(i);
+    }
+    public static void choosePotion(Wizard player, Year year, AbstractEnemy enemy){
+        System.out.println("1. I changed my mind");
+        int j = 2;
+        int choice = Potion.showPotions(player.getPotions(), year, j, "attack");
+        if (choice == 1) {
+            Wizard.attack(player, year, enemy);
+        } else {
+            Potion.usePotion();
+        }
     }
     public static void usePotion(){
 

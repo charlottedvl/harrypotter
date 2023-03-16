@@ -12,5 +12,7 @@ public abstract class AbstractSpell{
     private String description;
     private int year;
     private String type;
+    private String effectOne;
+    private String effectTwo;
 
 }

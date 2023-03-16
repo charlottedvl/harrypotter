@@ -51,12 +51,16 @@ public class HelloApplication extends Application {
         // We get a house
         Houses house = SortingHat.SortingHouse();
 
+        //We create the hp and maxHP
+        int hp = 100;
+        int maxHP = 100;
+
         // We create a list of known spells and potions
-        List<Spell> knownSpells = new ArrayList<>(); //We use array list because the size of an arraylist can be modified
-        List<Potion> potions = new ArrayList<>();
+        List<Spell> knownSpells = new ArrayList<Spell>();
+        List<Potion> potions = new ArrayList<Potion>();
 
         // We create the new wizard;
-        Wizard player = new Wizard(name, pet, wand, house, knownSpells, potions, 100);
+        Wizard player = new Wizard(name, pet, wand, house, knownSpells, potions, hp, maxHP);
         System.out.println("Hello " + name + ", we are happy to welcome you at Hogwarts School, the Wizard school");
         System.out.println("The Sorting Hat has attribuated you to " + house);
         System.out.println("Your pet is : " + pet);
@@ -79,6 +83,9 @@ public class HelloApplication extends Application {
 
         //We start the first year
         Year.yearProgress(years.get(0), player, spells, allPotions);
+
+        Year.StartFight(years.get(0), player);
+
 
 
     }

@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Boss extends AbstractEnemy{
     private Year year;
-    public Boss(String name, List<Spell> knownSpells, int hp) {
+    public Boss(String name, List<Spell> knownSpells, float hp, int maxHP, Year year) {
 
-        super(name, knownSpells, hp);
+        super(name, knownSpells, hp, maxHP, year);
     }
 }
