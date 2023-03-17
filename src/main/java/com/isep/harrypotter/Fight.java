@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
 @AllArgsConstructor
 @Getter @Setter
 public class Fight {
@@ -18,24 +20,24 @@ public class Fight {
         //Enemies for first fight
         Enemy shadowOne = Enemy.createEnemyShadow(year);
         Enemy shadowTwo = Enemy.createEnemyShadow(year);
-        List<AbstractEnemy> enemiesOne = new ArrayList<AbstractEnemy>();
+        List<AbstractEnemy> enemiesOne = new ArrayList<>();
         enemiesOne.add(shadowOne);
         enemiesOne.add(shadowTwo);
         Fight FOneYOne = new Fight(year, enemiesOne, "Oh no ! It seems that you are in trouble. In the dungeon, the shadows scares you. You become to be paranoid and hurt yourself. \nTry to reassure yourself", 1);
         //Enemies for second fight
         Enemy lock = Enemy.createEnemyLock(year);
         Enemy rock = Enemy.createEnemyRock(year);
-        List<AbstractEnemy> enemiesTwo = new ArrayList<AbstractEnemy>();
+        List<AbstractEnemy> enemiesTwo = new ArrayList<>();
         enemiesTwo.add(lock);
         enemiesTwo.add(rock);
         Fight FTwoYOne = new Fight(year, enemiesTwo, "When you enter deeper in the Dungeon, you see that the way is blocked by a rock and a door closed by a lock. \nClear the way to pass", 2);
         //Enemies for the Boss fight
         Boss troll = Boss.createTroll(year);
-        List<AbstractEnemy> enemiesBoss = new ArrayList<AbstractEnemy>();
+        List<AbstractEnemy> enemiesBoss = new ArrayList<>();
         enemiesBoss.add(troll);
         Fight FBoss = new Fight(year, enemiesBoss, "There is a HUUUUGE Troll on your way ! Make him inconscious. Be careful, he is insensible to potion", 3);
         //Create the list of fights for the first year
-        ArrayList<Fight> fights = new ArrayList<Fight>();
+        ArrayList<Fight> fights = new ArrayList<>();
         fights.add(FOneYOne);
         fights.add(FTwoYOne);
         fights.add(FBoss);
@@ -73,9 +75,9 @@ public class Fight {
                 Character.attack(enemyTwo, year, player, enemyOne);
             }
         }
-        if (enemyOne.getStatus() == "dead" && enemyTwo.getStatus()=="dead"){
+        if (Objects.equals(enemyOne.getStatus(), "dead") && Objects.equals(enemyTwo.getStatus(), "dead")){
             System.out.println("The fight is over ! You have defeated your enemies");
-        } else if (player.getStatus() == "dead"){
+        } else if (Objects.equals(player.getStatus(), "dead")){
             System.out.println("The Game is over.");
             System.out.println(player.getHp());
             System.exit(0);

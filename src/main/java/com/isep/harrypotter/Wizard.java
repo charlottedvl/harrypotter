@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Getter @Setter
 public class Wizard extends Character{
@@ -17,11 +18,11 @@ public class Wizard extends Character{
     private float percentFireworks = 0.30F;
     private int defensePoint = 100;
 
-    public Wizard(String name, Pet pet, Wand wand, House.Houses house, List<Spell> knownSpells, List<Potion> potions, float hp, int maxHP){
+    public Wizard(String name, Wand wand, List<Spell> knownSpells, List<Potion> potions, float hp, int maxHP){
         super(name, knownSpells, hp, maxHP);
-        this.pet = pet;
+        this.pet = Pet.values()[new Random().nextInt(Pet.values().length)];
         this.wand = wand;
-        this.house = house;
+        this.house = House.Houses.values()[new Random().nextInt(House.Houses.values().length)];
         this.potions = potions;
         setStatus("OK");
 
@@ -51,15 +52,9 @@ public class Wizard extends Character{
         System.out.println("Do you want to use potions or spells ? \n1. Potions\n2. Spells");
         int choice = Utiles.choice(2);
         switch (choice) {
-            case 1:
-                Potion.choosePotion(player, year, enemy, type);
-                break;
-            case 2:
-                Spell.chooseSpell(player, year, enemy, type);
-                break;
-            default:
-                System.out.println("An error occurred, please restart the game !");
-                break;
+            case 1 -> Potion.choosePotion(player, year, enemy, type);
+            case 2 -> Spell.chooseSpell(player, year, enemy, type);
+            default -> System.out.println("An error occurred, please restart the game !");
         }
     }
 

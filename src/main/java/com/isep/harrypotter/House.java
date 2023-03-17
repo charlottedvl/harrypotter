@@ -9,7 +9,7 @@ public class House {
 
     }
 
-    public static void SpecificationHouse(House.Houses house, float percentSpells, float percentPotion, float damage, float hp, float maxHP){
+    public void SpecificationHouse(House.Houses house, float percentSpells, float percentPotion, float damage, float hp, float maxHP){
         switch (house){
             case Ravenclaw -> percentSpells = percentSpells + 0.05F;
             case Slytherin -> damage = damage + 0.2F;

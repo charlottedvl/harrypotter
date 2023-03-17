@@ -31,10 +31,6 @@ public class HelloApplication extends Application {
         System.out.println("Please enter your name");
         String name = scanner.nextLine();
 
-        // We get a random pet;
-        Pet[] pets = Pet.values();
-        int randomIndexPet = new Random().nextInt(pets.length);
-        Pet pet = pets[randomIndexPet];
 
         // We get a random wand core;
         Core[] cores = Core.values();
@@ -48,8 +44,6 @@ public class HelloApplication extends Application {
         // We create the wand
         Wand wand = new Wand(core, size);
 
-        // We get a house
-        Houses house = SortingHat.SortingHouse();
 
         //We create the hp and maxHP
         int hp = 100;
@@ -60,10 +54,10 @@ public class HelloApplication extends Application {
         List<Potion> potions = new ArrayList<Potion>();
 
         // We create the new wizard;
-        Wizard player = new Wizard(name, pet, wand, house, knownSpells, potions, hp, maxHP);
+        Wizard player = new Wizard(name, wand, knownSpells, potions, hp, maxHP);
         System.out.println("Hello " + name + ", we are happy to welcome you at Hogwarts School, the Wizard school");
-        System.out.println("The Sorting Hat has attribuated you to " + house);
-        System.out.println("Your pet is : " + pet);
+        System.out.println("The Sorting Hat has attribuated you to " + player.getHouse());
+        System.out.println("Your pet is : " + player.getPet());
         System.out.println("Your wand has : " + wand.core + " as a core and measures : " + wand.size + " cm.");
         System.out.println("Please enjoy your first year and learn as many things as you can.");
 
@@ -71,11 +65,11 @@ public class HelloApplication extends Application {
         ArrayList<Year> years = Year.createYear();
         int trimester = 1;
 
-
+        House house = new House();
 
 
         // We change some attributes according to the house you are in
-        House.SpecificationHouse(house, player.getPercentSpells(), player.getPercentPotion(), player.getDamage(), player.getHp(), player.getMaxHP());
+        house.SpecificationHouse(player.getHouse(), player.getPercentSpells(), player.getPercentPotion(), player.getDamage(), player.getHp(), player.getMaxHP());
 
         // We create the lists of spells and potions you can learn during all you school years
         ArrayList<Spell> spells = Spell.createSpells();

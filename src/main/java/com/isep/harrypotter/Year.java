@@ -30,23 +30,21 @@ public class Year {
         System.out.println(year.advice);
         for (int trimester = 1; trimester < 4; trimester++){
             int action = ChoiceAction(trimester);
-            switch (action){
-                case 1:
+            switch (action) {
+                case 1 -> {
                     Spell spell = Spell.attendSpellClass(year, spells, player);
                     Spell.learnSpell(spell, player, year, spells);
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     Potion potion = Potion.attendPotionClass(year, allPotions, player);
                     Potion.learnPotion(potion, player, year, allPotions);
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     player.setPercentSpells(SkipClass(player.getPercentSpells()));
                     player.setPercentPotion(SkipClass(player.getPercentPotion()));
                     player.setPercentFireworks(SkipClassFireworks(player.getPercentFireworks()));
-                    break;
-                default:
-                    System.out.println("Please enter a valid number");
-                    break;
+                }
+                default -> System.out.println("Please enter a valid number");
             }
         }
     }
@@ -64,8 +62,7 @@ public class Year {
         System.out.println("1. Follow the sorcery lesson");
         System.out.println("2. Follow the potion lesson");
         System.out.println("3. Skip class and have fun");
-        int action = scanner.nextInt();
-        return action;
+        return scanner.nextInt();
     }
 
     public static float SkipClass(float percentSuccess){

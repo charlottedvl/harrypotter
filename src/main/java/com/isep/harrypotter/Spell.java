@@ -53,20 +53,21 @@ public class Spell extends AbstractSpell{
         System.out.println("1. Yes");
         System.out.println("2. No");
         int validate = Utiles.choice(2);
-        switch (validate){
-            case 1 :
+        switch (validate) {
+            case 1 -> {
                 player.getKnownSpells().add(spell);
                 spells.remove(spell);
                 System.out.println("You have successfully learn " + spell.getName());
-                break;
-            case 2:
-                System.out.println("Please choose another spell from the list");;
+            }
+            case 2 -> {
+                System.out.println("Please choose another spell from the list");
+                ;
                 attendSpellClass(year, spells, player);
-                break;
-            default :
+            }
+            default -> {
                 System.out.println("Please enter a valid number");
                 learnSpell(spell, player, year, spells);
-                break;
+            }
         }
     }
 
