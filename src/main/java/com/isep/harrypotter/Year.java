@@ -14,11 +14,12 @@ public class Year {
     private String number;// first, second, third...
     private String name;
     private String lieu;
+    private String advice;
 
 
     public static ArrayList<Year> createYear(){
         ArrayList<Year> years = new ArrayList<Year>();
-        Year yearOne = new Year(1, "first", "The Philosopher's Stone", "Dungeon's toilets");
+        Year yearOne = new Year(1, "first", "The Philosopher's Stone", "Dungeon's toilets", "We recommand you to attend the sorcery class as your final exam is a practice exam on the spell Wingardium Leviosa. ");
         years.add(yearOne);
         return years;
     }
@@ -26,6 +27,7 @@ public class Year {
     public static void yearProgress(Year year, Wizard player, ArrayList<Spell> spells, ArrayList<Potion> allPotions){
         System.out.println(year.name);
         System.out.println("Welcome to your " + year.number + " year at Hogwarts School !");
+        System.out.println(year.advice);
         for (int trimester = 1; trimester < 4; trimester++){
             int action = ChoiceAction(trimester);
             switch (action){
@@ -76,27 +78,8 @@ public class Year {
         return percentFireworks;
     }
 
-    public static void StartFight(Year year, Wizard player){
-        System.out.println("Oh no ! It seems that you are in trouble. In the dungeon, the shadows scares you. You become to be paranoid and hurt yourself.");
-        System.out.println("Try to reassure yourself or flee ! You have against you two shadows");
-        Enemy shadowOne = Enemy.createEnemyFightOne("Shadow", 70, 70, year);
-        Enemy shadowTwo = Enemy.createEnemyFightOne("Shadow", 70, 70, year);
-        fight(player, shadowOne, shadowTwo, year);
-    }
 
-    public static void fight(Wizard player, Enemy enemyOne, Enemy enemyTwo, Year year){
-        while (player.getHp()>0 && (enemyOne.getHp()>0 || enemyTwo.getHp()>0)){
-            Character.attack(player, year, enemyOne, enemyTwo);
-            if (player.getStatus() != "dead" && enemyOne.getStatus() != "dead"){
-                Character.attack(enemyOne, year, player, enemyTwo);
-            }
-            if (player.getStatus() != "dead" && enemyTwo.getStatus() != "dead") {
-                Character.attack(enemyTwo, year, player, enemyOne);
-            }
-        }
-        if (enemyOne.getStatus() == "dead" && enemyTwo.getStatus()=="dead"){
-            System.out.println("The fight is over ! You have succeeded.");
-        }
-    }
+
+
 
 }

@@ -9,12 +9,15 @@ public class House {
 
     }
 
-    public static void SpecificationHouse(House.Houses house, float percentSpells, float percentPotion, float damage, int defensePoint){
+    public static void SpecificationHouse(House.Houses house, float percentSpells, float percentPotion, float damage, float hp, float maxHP){
         switch (house){
-            case Ravenclaw -> percentSpells = 0.90F;
-            case Slytherin -> damage = 1.2F;
-            case Gryffindor -> defensePoint = 120;
-            case Hufflepuff -> percentPotion = 0.90F;
+            case Ravenclaw -> percentSpells = percentSpells + 0.05F;
+            case Slytherin -> damage = damage + 0.2F;
+            case Gryffindor -> {
+                hp = hp + 20F;
+                maxHP = maxHP+20F;
+            }
+            case Hufflepuff -> percentPotion = percentPotion + 005F;
             default -> System.out.println("An error occurred. Please restart the game");
         }
     }

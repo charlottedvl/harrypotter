@@ -75,7 +75,7 @@ public class HelloApplication extends Application {
 
 
         // We change some attributes according to the house you are in
-        House.SpecificationHouse(house, player.getPercentSpells(), player.getPercentPotion(), player.getDamage(), player.getDefensePoint());
+        House.SpecificationHouse(house, player.getPercentSpells(), player.getPercentPotion(), player.getDamage(), player.getHp(), player.getMaxHP());
 
         // We create the lists of spells and potions you can learn during all you school years
         ArrayList<Spell> spells = Spell.createSpells();
@@ -84,30 +84,13 @@ public class HelloApplication extends Application {
         //We start the first year
         Year.yearProgress(years.get(0), player, spells, allPotions);
 
-        Year.StartFight(years.get(0), player);
+        Fight.StartFightsOne(years.get(0), player);
 
 
 
     }
 
 
-    public static int choice(int i){
-        Scanner scanner = new Scanner(System.in);
-        int choice;
-        while (true) {
-            if (scanner.hasNextInt()) {
-                choice = scanner.nextInt();
-                if (choice >= 1 && choice <= i) {
-                    break;
-                } else {
-                    System.out.println("Please enter a valid number between 1 and " + i);
-                }
-            } else {
-                System.out.println("Please enter a valid integer");
-                scanner.next();
-            }
-        }
-        return choice;
-    }
+
 
 }
