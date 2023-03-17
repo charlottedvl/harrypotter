@@ -25,7 +25,7 @@ public class Boss extends AbstractEnemy{
         Boss Troll = new Boss("Troll", knownSpellsTroll, 1000, 1000, year, "Use Wingardium Leviosa to make damages on his head");
         return Troll;
     }
-    public static void vulnerability(Boss boss){
+    public static void checkVulnerability(Boss boss){
         boss.setVulnerability(boss.getVulnerability()+1);
         switch (boss.getVulnerability()){
             case 1:

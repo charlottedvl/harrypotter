@@ -107,9 +107,9 @@ public class Fight {
         String opponentName = names[1];
         float damages = (character.getDamage()*value);
         if (character.getPercentSpells() >= randomFloat){
-            if (name.equalsIgnoreCase("Wingardium Leviosa") && opponent.equals("Troll")){
+            if (name.equals("Wingardium Leviosa") && opponent.getName().equals("Troll")){
                 Boss boss = (Boss) opponent;
-                Boss.vulnerability(boss);
+                Boss.checkVulnerability(boss);
             } else {
                 opponent.setHp(opponent.getHp()-damages);
                 boolean isDead = Character.isDead(opponent);
