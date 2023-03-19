@@ -18,29 +18,35 @@ public class Year {
     private String advice;
 
 
-    public void yearProgress(Year year, Wizard player, ArrayList<Spell> spells, ArrayList<Potion> allPotions){
+    public void yearProgress(Wizard player, ArrayList<Spell> spells, ArrayList<Potion> allPotions){
         System.out.println(this.name);
         System.out.println("Welcome to your " + this.number + " year at Hogwarts School !");
         System.out.println(this.advice);
         for (int trimester = 1; trimester < 4; trimester++){
-            int action = ChoiceAction(trimester);
-            switch (action) {
-                case 1 -> {
-                    player.attendSpellClass(year);
-                }
-                case 2 -> {
-                    player.attendPotionClass(year);
-                }
-                case 3 -> {
-                    player.setPercentSpells(SkipClass(player.getPercentSpells()));
-                    player.setPercentPotion(SkipClass(player.getPercentPotion()));
-                    player.setPercentFireworks(SkipClassFireworks(player.getPercentFireworks()));
-                }
-                default -> System.out.println("Please enter a valid number");
-            }
+            trimester(player, trimester);
         }
     }
 
+    public void trimester(Wizard player, int trimester){
+        int action = ChoiceAction(trimester);
+        switch (action) {
+            case 1 -> {
+                player.attendSpellClass(this);
+            }
+            case 2 -> {
+                player.attendPotionClass(this);
+            }
+            case 3 -> {
+                player.setPercentSpells(SkipClass(player.getPercentSpells()));
+                player.setPercentPotion(SkipClass(player.getPercentPotion()));
+                player.setPercentFireworks(SkipClassFireworks(player.getPercentFireworks()));
+            }
+            default -> {
+                System.out.println("Please enter a valid number");
+                trimester(player, trimester);
+            }
+        }
+    }
     public int ChoiceAction(int trimester){
         String number ="";
         switch (trimester){

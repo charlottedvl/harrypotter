@@ -65,15 +65,15 @@ public class HelloApplication extends Application {
         // We create the lists of potions you can learn during all you school years
         ArrayList<Potion> allPotions = new ArrayList<>();
         Potion forgetfulness = new Potion ("Forgetfulness Potion", 0F, "Make your opponent lose memory. it increase confusion, useful when you don't want your enemy to attack !", 1, "attack", "confusion", "none", 1);
-        Potion wiggenweld = new Potion ("Wiggenweld Potion", 0F, "A potion that help you heal from your injuries", 1, "defense", "heal", "none", 1);
         Potion fire  = new Potion ("Fire Potion", 30F, "Create a huge fire that burn enemies and light up the place", 1, "attack", "light", "damages", 1);
+        Potion wiggenweld = new Potion ("Wiggenweld Potion", 0F, "A potion that help you heal from your injuries", 1, "defense", "heal", "none", 1);
         allPotions.add(forgetfulness);
-        allPotions.add(wiggenweld);
         allPotions.add(fire);
+        allPotions.add(wiggenweld);
         player.setAllPotions(allPotions);
 
         //We start the first year
-        yearOne.yearProgress(years.get(0), player, spells, allPotions);
+        yearOne.yearProgress(player, spells, allPotions);
 
         years.get(0).StartFightsOne(player);
 

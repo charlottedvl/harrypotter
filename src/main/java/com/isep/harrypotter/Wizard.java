@@ -36,20 +36,20 @@ public class Wizard extends Character{
         System.out.println("You have chosen to attend the sorcery class");
         System.out.println("This year, you can learn one of the many spells below. Please enter the number of the spell you want to learn");
         int i=1;
-        showSpells(this.spells, year, "attack", i);
-        showSpells(this.spells, year, "defense", i);
-        showSpells(this.spells, year, "none", i);
+        i = showSpells(this.spells, year, "attack", i);
+        i = showSpells(this.spells, year, "defense", i);
+        i = showSpells(this.spells, year, "none", i);
         int choice = Utiles.choice(this.spells.size());
         learnSpell(this.spells.get(choice-1), year);
     }
 
-    public void showSpells(List<Spell> spells, Year year, String type, int i) {
+    public int showSpells(List<Spell> spells, Year year, String type, int i) {
         for (Spell spell : spells) {
             if (spell.getYear() <= year.getNumberYear() && spell.getType().equalsIgnoreCase(type)){
                 System.out.println(i + ". " + spell.getName() + " : " + spell.getDescription());
                 i++;
             }
-        }
+        }return i;
     }
 
     public void learnSpell(Spell spell, Year year){
@@ -81,20 +81,20 @@ public class Wizard extends Character{
         System.out.println("You have chosen to attend the potion class");
         System.out.println("This year, you can learn one of the many potions below. Please enter the number of the potion you want to learn");
         int i = 1;
-        showPotions(this.allPotions, year, "attack", i);
-        showPotions(this.allPotions, year, "defense", i);
-        showPotions(this.allPotions, year, "none", i);
+        i = showPotions(this.allPotions, year, "attack", i);
+        i = showPotions(this.allPotions, year, "defense", i);
+        i = showPotions(this.allPotions, year, "none", i);
         int choice = Utiles.choice(this.allPotions.size());
         this.learnPotion(this.allPotions.get(choice-1), year);
     }
 
-    public void showPotions(List<Potion> allPotions, Year year, String type, int i){
-        for (Potion potion : this.allPotions) {
+    public int showPotions(List<Potion> allPotions, Year year, String type, int i){
+        for (Potion potion : allPotions) {
             if (potion.getYear() <= year.getNumberYear() && potion.getType().equalsIgnoreCase(type)){
                 System.out.println(i + ". " + potion.getName() + " : " + potion.getDescription());
                 i++;
             }
-        }
+        }return i;
     }
     public void learnPotion(Potion potion, Year year){
         System.out.println("Are you sur you want to learn " + potion.getName() + " ?");
@@ -139,13 +139,13 @@ public class Wizard extends Character{
     public void chooseSpell(Year year, AbstractEnemy enemy, String type){
         int j = 2;
         System.out.println("1. I changed my mind");
-        this.showSpells(this.getKnownSpells(), year, type, j);
-        this.showSpells(this.getKnownSpells(), year, "none", j);
+        j = this.showSpells(this.getKnownSpells(), year, type, j);
+        j = this.showSpells(this.getKnownSpells(), year, "none", j);
         int spell = Utiles.choice(j);
         if (spell == 1) {
             this.attack(year, enemy);
         } else if (spell >= j) {
-            System.out.println("Please enter a number between 1 and " + j);
+            System.out.println("Please enter a number between 1 and " + (j-1));
             this.chooseSpell(year, enemy, type);
         } else if (type.equals("attack")){
             this.getKnownSpells().get(spell-2).useSpellAttack(this, enemy);
@@ -158,13 +158,13 @@ public class Wizard extends Character{
     public void choosePotion(Year year, AbstractEnemy enemy, String type){
         int j = 2;
         System.out.println("1. I changed my mind");
-        this.showPotions(this.getPotions(), year, type, j);
-        this.showPotions(this.getPotions(), year, "none", j);
+        j = this.showPotions(this.getPotions(), year, type, j);
+        j = this.showPotions(this.getPotions(), year, "none", j);
         int potion = Utiles.choice(j);
         if (potion == 1) {
             this.attack(year, enemy);
         } else if (potion >= j) {
-            System.out.println("Please enter a number between 1 and " + j);
+            System.out.println("Please enter a number between 1 and " + (j-1));
             this.choosePotion(year, enemy, type);
         } else if (type.equals("attack")){
             this.getPotions().get(potion-2).usePotionAttack(this, enemy);

@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Final static">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Fonctions.java" afterDir="false" />
+    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Change the structure to avoid having useless static methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/AbstractEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/AbstractEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Boss.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Fight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Potion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Spell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Utiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Utiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Wand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Wand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Wizard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Year.java" afterDir="false" />
     </list>
@@ -126,7 +116,7 @@
       <workItem from="1679057026461" duration="185000" />
       <workItem from="1679058334548" duration="4509000" />
       <workItem from="1679063967790" duration="5793000" />
-      <workItem from="1679249070404" duration="8541000" />
+      <workItem from="1679249070404" duration="10578000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1678195713313</created>
@@ -212,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679061703305</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Change the structure to avoid having useless static methods">
+      <created>1679258639591</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679258639591</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +237,7 @@
     <MESSAGE value="Modification of the fights" />
     <MESSAGE value="Boss fight works" />
     <MESSAGE value="Final static" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final static" />
+    <MESSAGE value="Change the structure to avoid having useless static methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change the structure to avoid having useless static methods" />
   </component>
 </project>
