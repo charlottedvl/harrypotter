@@ -12,18 +12,18 @@ public abstract class AbstractEnemy extends Character {
     private Year year;
     private String status;
     private String advice;
-    public AbstractEnemy(String name, List<Spell> knownSpells, float hp, int maxHP, Year year, String advice) {
+    public AbstractEnemy(String name, float hp, int maxHP, Year year, String advice) {
 
-        super(name, knownSpells, hp, maxHP);
+        super(name, hp, maxHP);
         this.year = year;
         this.advice = advice;
         setStatus("OK");
     }
 
-    public static void attack(AbstractEnemy enemy, Wizard player){
-        int lengthSpells = enemy.getKnownSpells().size();
+    public void attack(Wizard player){
+        int lengthSpells = this.getKnownSpells().size();
         Random rand = new Random();
         int randomNumber = rand.nextInt(lengthSpells);
-        Spell.useSpellAttack(enemy, enemy.getKnownSpells().get(randomNumber), player);
+        this.getKnownSpells().get(randomNumber).useSpellAttack(this, player);
     }
 }

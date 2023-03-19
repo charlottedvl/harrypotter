@@ -1,23 +1,26 @@
 package com.isep.harrypotter;
 
+import java.util.Random;
+
 public class House {
+    Houses name;
     enum Houses {
         Gryffindor,
         Hufflepuff,
         Ravenclaw,
         Slytherin
-
+    }
+    public House(){
+        this.name = House.Houses.values()[new Random().nextInt(House.Houses.values().length)];
     }
 
-    public void SpecificationHouse(House.Houses house, float percentSpells, float percentPotion, float damage, float hp, float maxHP){
+    public void specificationsHouse(Wizard player){
+        Houses house = this.name;
         switch (house){
-            case Ravenclaw -> percentSpells = percentSpells + 0.05F;
-            case Slytherin -> damage = damage + 0.2F;
-            case Gryffindor -> {
-                hp = hp + 20F;
-                maxHP = maxHP+20F;
-            }
-            case Hufflepuff -> percentPotion = percentPotion + 005F;
+            case Ravenclaw -> player.setPercentSpells(0.90F);
+            case Slytherin -> player.setDamage(1.2F);
+            case Gryffindor -> player.setHp(120);
+            case Hufflepuff -> player.setPercentPotion(0.90F);
             default -> System.out.println("An error occurred. Please restart the game");
         }
     }

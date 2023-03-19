@@ -5,12 +5,7 @@ import java.util.Scanner;
 
 public class Utiles {
 
-    public static float random(Character character){
-        float percentSpells = character.getPercentSpells();
-        Random random = new Random();
-        float randomFloat = random.nextFloat();
-        return randomFloat;
-    }
+
 
     public static int choice(int i){
         Scanner scanner = new Scanner(System.in);

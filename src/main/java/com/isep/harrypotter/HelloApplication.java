@@ -32,53 +32,50 @@ public class HelloApplication extends Application {
         String name = scanner.nextLine();
 
 
-        // We get a random wand core;
-        Core[] cores = Core.values();
-        int randomIndexCore = new Random().nextInt(cores.length);
-        Core core = cores[randomIndexCore];
 
-        // We get a random wand size
-        Random random = new Random();
-        int size = random.nextInt(11) + 10;
-
-        // We create the wand
-        Wand wand = new Wand(core, size);
-
-
-        //We create the hp and maxHP
-        int hp = 100;
-        int maxHP = 100;
-
-        // We create a list of known spells and potions
-        List<Spell> knownSpells = new ArrayList<Spell>();
-        List<Potion> potions = new ArrayList<Potion>();
 
         // We create the new wizard;
-        Wizard player = new Wizard(name, wand, knownSpells, potions, hp, maxHP);
+        Wizard player = new Wizard(name, 100F, 100);
         System.out.println("Hello " + name + ", we are happy to welcome you at Hogwarts School, the Wizard school");
         System.out.println("The Sorting Hat has attribuated you to " + player.getHouse());
         System.out.println("Your pet is : " + player.getPet());
-        System.out.println("Your wand has : " + wand.core + " as a core and measures : " + wand.size + " cm.");
+        System.out.println("Your wand has : " + player.getWand().core + " as a core and measures : " + player.getWand().size + " cm.");
         System.out.println("Please enjoy your first year and learn as many things as you can.");
 
-        //We initiate the year and the trimester
-        ArrayList<Year> years = Year.createYear();
-        int trimester = 1;
-
-        House house = new House();
-
-
         // We change some attributes according to the house you are in
-        house.SpecificationHouse(player.getHouse(), player.getPercentSpells(), player.getPercentPotion(), player.getDamage(), player.getHp(), player.getMaxHP());
+        House house = player.getHouse();
+        house.specificationsHouse(player);
 
-        // We create the lists of spells and potions you can learn during all you school years
-        ArrayList<Spell> spells = Spell.createSpells();
-        ArrayList<Potion> allPotions = Potion.createPotions();
+        //We initiate the year and the trimester
+        ArrayList<Year> years = new ArrayList<Year>();
+        Year yearOne = new Year(1, "first", "The Philosopher's Stone", "Dungeon's toilets", "We recommand you to attend the sorcery class as your final exam is a practice exam on the spell Wingardium Leviosa. ");
+        years.add(yearOne);
+
+
+        // We create the lists of spells you can learn during all you school years
+        ArrayList<Spell> spells = new ArrayList<>();
+        Spell lumos = new Spell("Lumos", 0F, "Create a light at the end of your wand. Useful to see in the dark... and to reassure you", 1, "none", "light", "none", 1);
+        Spell allohomora = new Spell("Allohomora", 0F, "Open any lock you want", 1, "none", "light", "none", 1);
+        Spell wingardium_Leviosa = new Spell("Wingardium Leviosa", 30F, "Levitate any object, provided you pronounce the magic formula correctly", 1, "none", "damages", "none", 1);
+        spells.add(lumos);
+        spells.add(allohomora);
+        spells.add(wingardium_Leviosa);
+        player.setSpells(spells);
+
+        // We create the lists of potions you can learn during all you school years
+        ArrayList<Potion> allPotions = new ArrayList<>();
+        Potion forgetfulness = new Potion ("Forgetfulness Potion", 0F, "Make your opponent lose memory. it increase confusion, useful when you don't want your enemy to attack !", 1, "attack", "confusion", "none", 1);
+        Potion wiggenweld = new Potion ("Wiggenweld Potion", 0F, "A potion that help you heal from your injuries", 1, "defense", "heal", "none", 1);
+        Potion fire  = new Potion ("Fire Potion", 30F, "Create a huge fire that burn enemies and light up the place", 1, "attack", "light", "damages", 1);
+        allPotions.add(forgetfulness);
+        allPotions.add(wiggenweld);
+        allPotions.add(fire);
+        player.setAllPotions(allPotions);
 
         //We start the first year
-        Year.yearProgress(years.get(0), player, spells, allPotions);
+        yearOne.yearProgress(years.get(0), player, spells, allPotions);
 
-        Fight.StartFightsOne(years.get(0), player);
+        years.get(0).StartFightsOne(player);
 
 
 
