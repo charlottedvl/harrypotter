@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Change many things to make choice">
+    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Change the structure to avoid having useless static methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/AbstractEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/AbstractEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/AbstractSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/AbstractSpell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Boss.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/ForbiddenSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/ForbiddenSpell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Potion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Spell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Wizard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Year.java" afterDir="false" />
     </list>
@@ -59,9 +50,8 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dchar/IdeaProjects/TP-JAVA&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dchar/IdeaProjects/harrypotter&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -119,7 +109,14 @@
       <workItem from="1678883221120" duration="629000" />
       <workItem from="1678886824205" duration="47000" />
       <workItem from="1678889309946" duration="1256000" />
-      <workItem from="1678955613808" duration="8668000" />
+      <workItem from="1678955613808" duration="9356000" />
+      <workItem from="1678969044687" duration="1872000" />
+      <workItem from="1678978613554" duration="4719000" />
+      <workItem from="1679039008658" duration="13655000" />
+      <workItem from="1679057026461" duration="185000" />
+      <workItem from="1679058334548" duration="4509000" />
+      <workItem from="1679063967790" duration="5793000" />
+      <workItem from="1679249070404" duration="10578000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1678195713313</created>
@@ -177,7 +174,42 @@
       <option name="project" value="LOCAL" />
       <updated>1678727849860</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Implement the figth">
+      <created>1678964898694</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678964898694</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Modification of the fights">
+      <created>1679052667561</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679052667561</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Boss fight works">
+      <created>1679059243503</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679059243503</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Final static">
+      <created>1679061703305</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1679061703305</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Change the structure to avoid having useless static methods">
+      <created>1679258639591</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679258639591</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +233,11 @@
     <MESSAGE value="Specifications house" />
     <MESSAGE value="Specifications" />
     <MESSAGE value="Change many things to make choice" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change many things to make choice" />
+    <MESSAGE value="Implement the figth" />
+    <MESSAGE value="Modification of the fights" />
+    <MESSAGE value="Boss fight works" />
+    <MESSAGE value="Final static" />
+    <MESSAGE value="Change the structure to avoid having useless static methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change the structure to avoid having useless static methods" />
   </component>
 </project>

@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter @Setter
 public abstract class AbstractSpell{
     private String name;
-    private int damage;
+    private float value;
     private String description;
     private int year;
     private String type;
