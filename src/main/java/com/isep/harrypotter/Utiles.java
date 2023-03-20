@@ -7,7 +7,7 @@ public class Utiles {
 
 
 
-    public static int choice(int i){
+    public int choice(int i){
         Scanner scanner = new Scanner(System.in);
         int choice;
         while (true) {
