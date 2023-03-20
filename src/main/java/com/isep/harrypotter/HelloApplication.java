@@ -24,7 +24,7 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         //launch();
-
+        Utiles utiles = new Utiles();
         // We initiate the new player
         // We get the name;
         Scanner scanner = new Scanner(System.in);
@@ -35,7 +35,7 @@ public class HelloApplication extends Application {
 
 
         // We create the new wizard;
-        Wizard player = new Wizard(name, 100F, 100);
+        Wizard player = new Wizard(utiles, name, 100F, 100);
         System.out.println("Hello " + name + ", we are happy to welcome you at Hogwarts School, the Wizard school");
         System.out.println("The Sorting Hat has attribuated you to " + player.getHouse());
         System.out.println("Your pet is : " + player.getPet());

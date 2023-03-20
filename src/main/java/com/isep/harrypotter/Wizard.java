@@ -19,8 +19,9 @@ public class Wizard extends Character{
     private List<Potion> allPotions;
     private float percentPotion = 0.80F;
     private float percentFireworks = 0.30F;
+    private Utiles utiles;
 
-    public Wizard(String name, float hp, int maxHP){
+    public Wizard(Utiles utiles, String name, float hp, int maxHP){
         super(name, hp, maxHP);
         this.pet = Pet.values()[new Random().nextInt(Pet.values().length)];
         this.wand = new Wand();
@@ -29,6 +30,7 @@ public class Wizard extends Character{
         setStatus("OK");
         this.spells = new ArrayList<Spell>();
         this.allPotions = new ArrayList<Potion>();
+        this.utiles = utiles;
     }
 
 
@@ -39,7 +41,7 @@ public class Wizard extends Character{
         i = showSpells(this.spells, year, "attack", i);
         i = showSpells(this.spells, year, "defense", i);
         i = showSpells(this.spells, year, "none", i);
-        int choice = Utiles.choice(this.spells.size());
+        int choice = this.utiles.choice(this.spells.size());
         learnSpell(this.spells.get(choice-1), year);
     }
 
@@ -56,7 +58,7 @@ public class Wizard extends Character{
         System.out.println("Are you sur you want to learn " + spell.getName() + " ?");
         System.out.println("1. Yes");
         System.out.println("2. No");
-        int validate = Utiles.choice(2);
+        int validate = this.utiles.choice(2);
         switch (validate) {
             case 1 -> {
                 this.getKnownSpells().add(spell);
@@ -84,7 +86,7 @@ public class Wizard extends Character{
         i = showPotions(this.allPotions, year, "attack", i);
         i = showPotions(this.allPotions, year, "defense", i);
         i = showPotions(this.allPotions, year, "none", i);
-        int choice = Utiles.choice(this.allPotions.size());
+        int choice = this.utiles.choice(this.allPotions.size());
         this.learnPotion(this.allPotions.get(choice-1), year);
     }
 
@@ -100,7 +102,7 @@ public class Wizard extends Character{
         System.out.println("Are you sur you want to learn " + potion.getName() + " ?");
         System.out.println("1. Yes");
         System.out.println("2. No");
-        int validate = Utiles.choice(2);
+        int validate = this.utiles.choice(2);
         switch (validate){
             case 1 :
                 this.getPotions().add(potion);
@@ -129,7 +131,7 @@ public class Wizard extends Character{
         if (enemies.size() > 1 && enemies.get(1).getStatus() != "dead"){
             System.out.println("2. " + enemies.get(1).getName());
         }
-        int choice = Utiles.choice(2);
+        int choice = this.utiles.choice(2);
         this.attack(year, enemies.get(choice-1));
     }
 
@@ -141,7 +143,7 @@ public class Wizard extends Character{
         System.out.println("1. I changed my mind");
         j = this.showSpells(this.getKnownSpells(), year, type, j);
         j = this.showSpells(this.getKnownSpells(), year, "none", j);
-        int spell = Utiles.choice(j);
+        int spell = this.utiles.choice(j);
         if (spell == 1) {
             this.attack(year, enemy);
         } else if (spell >= j) {
@@ -160,7 +162,7 @@ public class Wizard extends Character{
         System.out.println("1. I changed my mind");
         j = this.showPotions(this.getPotions(), year, type, j);
         j = this.showPotions(this.getPotions(), year, "none", j);
-        int potion = Utiles.choice(j);
+        int potion = this.utiles.choice(j);
         if (potion == 1) {
             this.attack(year, enemy);
         } else if (potion >= j) {
@@ -178,7 +180,7 @@ public class Wizard extends Character{
 
     public void attack(Year year, AbstractEnemy enemy){
         System.out.println("Do you want to use defense or attack ? \n1. Defense\n2. Attack");
-        int choose = Utiles.choice(2);
+        int choose = this.utiles.choice(2);
         String type = "";
         switch (choose) {
             case 1-> type = "defense";
@@ -186,7 +188,7 @@ public class Wizard extends Character{
             default -> System.out.println("An error occurred, please restart the game !");
         }
         System.out.println("Do you want to use potions or spells ? \n1. Potions\n2. Spells");
-        int choice = Utiles.choice(2);
+        int choice = this.utiles.choice(2);
         switch (choice) {
             case 1 -> this.choosePotion(year, enemy, type);
             case 2 -> this.chooseSpell(year, enemy, type);
