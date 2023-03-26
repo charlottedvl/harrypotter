@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Small correction for the POO structure" />
+    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Last static suppressed">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Setup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/AbstractEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/AbstractEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/AbstractSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/knowledge/AbstractSpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Boss.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/particularities/Core.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/scholarship/Fight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/ForbiddenSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/knowledge/ForbiddenSpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/particularities/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/particularities/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/knowledge/Potion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/SortingHat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/particularities/SortingHat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/knowledge/Spell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Wand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/particularities/Wand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Wizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/scholarship/Year.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/isep/harrypotter/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/isep/harrypotter/hello-view.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,6 +135,27 @@
       <workItem from="1679063967790" duration="5793000" />
       <workItem from="1679249070404" duration="10578000" />
       <workItem from="1679259665408" duration="150000" />
+      <workItem from="1679299394218" duration="489000" />
+      <workItem from="1679316882642" duration="219000" />
+      <workItem from="1679325700362" duration="2984000" />
+      <workItem from="1679329619601" duration="658000" />
+      <workItem from="1679390062764" duration="28000" />
+      <workItem from="1679392479735" duration="7293000" />
+      <workItem from="1679478989524" duration="1000" />
+      <workItem from="1679481686269" duration="2362000" />
+      <workItem from="1679488457586" duration="25000" />
+      <workItem from="1679488520993" duration="399000" />
+      <workItem from="1679491060128" duration="127000" />
+      <workItem from="1679493834521" duration="633000" />
+      <workItem from="1679495531334" duration="2576000" />
+      <workItem from="1679508517284" duration="292000" />
+      <workItem from="1679521708900" duration="884000" />
+      <workItem from="1679522908968" duration="187000" />
+      <workItem from="1679642714293" duration="12357000" />
+      <workItem from="1679732298627" duration="2229000" />
+      <workItem from="1679735976068" duration="4469000" />
+      <workItem from="1679751629394" duration="1323000" />
+      <workItem from="1679837808399" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1678195713313</created>
@@ -212,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679259729902</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Last static suppressed">
+      <created>1679299830701</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1679299830702</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +273,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Character" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -242,6 +304,7 @@
     <MESSAGE value="Final static" />
     <MESSAGE value="Change the structure to avoid having useless static methods" />
     <MESSAGE value="Small correction for the POO structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small correction for the POO structure" />
+    <MESSAGE value="Last static suppressed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last static suppressed" />
   </component>
 </project>

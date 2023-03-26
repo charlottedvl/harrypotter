@@ -1,11 +1,14 @@
-package com.isep.harrypotter;
+package com.isep.harrypotter.character.particularities;
 
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Random;
 
+@Getter @Setter
 public class Wand {
-    Core core;
-    int size;
+    private Core core;
+    private int size;
 
     public Wand(){
         this.core = Core.values()[new Random().nextInt(Core.values().length)];

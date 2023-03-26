@@ -1,9 +1,11 @@
-package com.isep.harrypotter;
+package com.isep.harrypotter.character;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import com.isep.harrypotter.knowledge.*;
+import com.isep.harrypotter.scholarship.Year;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -17,14 +19,16 @@ public abstract class Character {
     private int maxHP;
     private String status;
     private float percentSpells = 0.80F;
-    private float damage = 1F;
-    public Character(String name, float hp, int maxHP){
+    private float damage;
+    private int vulnerability = 0;
+    public Character(String name, float hp, int maxHP, float damage){
         List<Spell> knownSpells = new ArrayList<Spell>();
         this.name = name;
         this.knownSpells = knownSpells;
         this.hp = hp;
         this.maxHP = maxHP;
         this.status = "OK";
+        this.damage = damage;
     }
 
 
@@ -70,13 +74,7 @@ public abstract class Character {
                 break;
             case "Reduced1" :
                 this.setStatus("OK");
-                this.setDamage(1F);
-                if (this instanceof Wizard){
-                    Wizard player = (Wizard) this;
-                    if (player.getHouse().equals("Slytherin")){
-                        this.setDamage(1.2F);
-                    }
-                }
+                this.setDamage(getDamage()+0.3F);
                 break;
         }
         return test;
@@ -112,22 +110,22 @@ public abstract class Character {
 
 
 
-    public void effectAttack(Character characterTwo, String name, int level, float value, String effect, float percent){
+    public void effectAttack(Character characterTwo, String name, float value, String effect, float percent){
         float randomFloat = random();
         switch (effect){
             case "light"-> this.light(characterTwo, name, percent, randomFloat);
-            case "confusion"-> this.confusion(characterTwo, level, name, randomFloat, percent);
-            case "attire" -> this.attire(percent);
+            case "confusion"-> this.confusion(characterTwo, name, value, randomFloat, percent);
+            case "attire" -> this.attire(characterTwo, name, value, randomFloat, percent);
             case "reduce" -> this.reduce(characterTwo, name, value, randomFloat, percent);
             case "damages" -> this.damages(characterTwo, name, value, randomFloat, percent);
         }
     }
-    public void effectDefense(Character characterTwo, String name, int level, float value, String effect, float percent){
+    public void effectDefense(Character characterTwo, String name, float value, String effect, float percent){
         float randomFloat = random();
         switch (effect) {
             case "heal" -> heal(characterTwo, value, randomFloat, name, percent);
-            case "increase" -> increase(percent);
-            case "expecto" -> expecto(percent);
+            case "increase" -> increase(name, randomFloat, percent);
+            case "expecto" -> expecto(characterTwo, name, value, randomFloat, percent);
         }
     }
 
@@ -137,9 +135,9 @@ public abstract class Character {
         String opponentName = names[1];
         float damages = (this.getDamage()*value);
         if (percent >= randomFloat){
-            if (name.equals("Wingardium Leviosa") && opponent.getName().equals("Troll")){
+            if (opponent instanceof Boss){
                 Boss boss = (Boss) opponent;
-                boss.checkVulnerability();
+                boss.testBoss(name);
             } else {
                 opponent.setHp(opponent.getHp()-damages);
                 boolean isDead = opponent.isDead();
@@ -165,11 +163,11 @@ public abstract class Character {
         String nameCharacter = names[0];
         String opponentName = names[1];
         if (randomFloat <= percent){
-            opponent.setDamage(0.7F);
+            opponent.setDamage(opponent.getDamage() - 0.3F);
             opponent.setStatus("Reduced1");
             System.out.println(nameCharacter + " succeeded to use " + name + ". " + opponentName + " the damages reduced for one turn.");
         } else if (randomFloat >= 0.95F){
-            this.setDamage(0.7F);
+            this.setDamage(this.getDamage()-0.3F);
             this.setStatus("Reduced1");
             System.out.println(nameCharacter + " succeeded to use " + name + ". " + opponentName + " the damages reduced for one turn.");
         } else {
@@ -177,12 +175,42 @@ public abstract class Character {
         }
     }
 
-    public void attire(float percent){
-
+    public void attire(Character opponent, String name, float value, float randomFloat, float percent){
+        String [] names = this.findName(opponent);
+        String nameCharacter = names[0];
+        String opponentName = names[1];
+        if (randomFloat <= percent){
+            if (opponent instanceof Boss) {
+                Boss boss = (Boss) opponent;
+                boss.testBossAccio();
+                System.out.println(nameCharacter + " succeeded to use " + name + ". ");
+            } else {
+                System.out.println(nameCharacter + " failed to find a valid target " + name + ". Nothing happened.");
+            }
+        } else {
+            System.out.println("Nothing happened");
+        }
     }
 
-    public void expecto(float percent){
-
+    public void expecto(Character opponent, String name, float value, float randomFloat, float percent){
+        String [] names = this.findName(opponent);
+        String nameCharacter = names[0];
+        String opponentName = names[1];
+        if (opponent.getName().equals("dementor")){
+            opponent.checkCount();
+        } else {
+            System.out.println("You succeeded at casting the spell but your enemies are invulnerable to this spell...");
+        }
+    }
+    public void checkCount(){
+        if (this.vulnerability <=2){
+            this.setVulnerability(this.getVulnerability()+1);
+            System.out.println("It works ! Your spell has damaged the enemies. Continue this way !");
+        } else {
+            setHp(0);
+            setStatus("dead");
+            System.out.println("Your enemies are defeated ! ");
+        }
     }
 
     public void light(Character opponent, String name, float percent, float randomFloat){
@@ -221,12 +249,12 @@ public abstract class Character {
         }
     }
 
-    public void confusion(Character opponent, int level, String name, float randomFloat, float percent){
+    public void confusion(Character opponent, String name, float value, float randomFloat, float percent){
         String [] names = this.findName(opponent);
         String nameCharacter = names[0];
         String opponentName = names[1];
         if (randomFloat <= percent){
-            if (level == 1){
+            if (value == 1F){
                 opponent.setStatus("Confused1");
                 System.out.println(nameCharacter + " use " + name + " that bring unconsciousness. " + opponentName + " been set out of the fight for one turn.");
             } else {
@@ -234,7 +262,7 @@ public abstract class Character {
                 System.out.println(nameCharacter + " cast a spell that bring unconsciousness. " + opponentName + " been set out of the fight for two turns.");
             }
         } else {
-            if (level == 1){
+            if (value == 1F){
                 this.setStatus("Confused1");
                 System.out.println(nameCharacter + " failed to cast a spell that bring unconsciousness. " + nameCharacter + " been set out of the fight for one turn.");
             } else {
@@ -244,6 +272,21 @@ public abstract class Character {
         }
     }
 
-    public void increase(float percent){
+    public void increase(String name, float randomFloat, float percent){
+        if (randomFloat <= percent) {
+            if (name.equals("Strengthening Solution")) {
+                this.setDamage(this.getDamage() + 0.2F);
+            } else if (name.equals("Wit-Sharpening Potion")) {
+                this.setPercentSpells(this.getPercentSpells() + 0.05F);
+            } else if (name.equals("Felix Felicis")) {
+                //The character is a wizard
+                Wizard player = (Wizard) this;
+                player.setPercentSpells(this.getPercentSpells() + 0.05F);
+                player.setPercentPotion(player.getPercentPotion() + 0.05F);
+            }
+            System.out.println("The use of " + name + "succeeded ! You have improved your performances");
+        } else {
+            System.out.println("The use of " + name + " failed. Nothing happened...");
+        }
     }
 }

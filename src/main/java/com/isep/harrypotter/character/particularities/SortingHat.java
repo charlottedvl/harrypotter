@@ -1,5 +1,4 @@
-package com.isep.harrypotter;
-
+package com.isep.harrypotter.character.particularities;
 import java.util.Random;
 
 public class SortingHat {
