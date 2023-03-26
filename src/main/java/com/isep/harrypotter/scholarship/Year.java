@@ -1,15 +1,12 @@
 package com.isep.harrypotter.scholarship;
 
-import com.isep.harrypotter.Setup;
-import com.isep.harrypotter.knowledge.Potion;
-import com.isep.harrypotter.knowledge.Spell;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 
 import com.isep.harrypotter.character.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,7 +20,7 @@ public class Year {
     private String advice;
 
 
-    public void yearProgress(Wizard player, ArrayList<Spell> spells, ArrayList<Potion> allPotions){
+    public void yearProgress(Wizard player){
         System.out.println(this.name);
         System.out.println("Welcome to your " + this.number + " year at Hogwarts School !");
         System.out.println(this.advice);
@@ -35,12 +32,8 @@ public class Year {
     public void trimester(Wizard player, int trimester){
         int action = ChoiceAction(trimester);
         switch (action) {
-            case 1 -> {
-                player.attendSpellClass(this);
-            }
-            case 2 -> {
-                player.attendPotionClass(this);
-            }
+            case 1 -> player.attendSpellClass(this);
+            case 2 -> player.attendPotionClass(this);
             case 3 -> {
                 player.setPercentSpells(SkipClass(player.getPercentSpells()));
                 player.setPercentPotion(SkipClass(player.getPercentPotion()));

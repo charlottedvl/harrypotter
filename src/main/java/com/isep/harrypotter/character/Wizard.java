@@ -10,7 +10,7 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
+
 
 @Getter @Setter
 public class Wizard extends Character{
@@ -31,11 +31,11 @@ public class Wizard extends Character{
         this.pet = Pet.values()[new Random().nextInt(Pet.values().length)];
         this.wand = new Wand();
         this.house = new House();
-        this.potions = new ArrayList<Potion>();
+        this.potions = new ArrayList<>();
         setStatus("OK");
-        this.spells = new ArrayList<Spell>();
-        this.forbiddenSpells = new ArrayList<ForbiddenSpell>();
-        this.allPotions = new ArrayList<Potion>();
+        this.spells = new ArrayList<>();
+        this.forbiddenSpells = new ArrayList<>();
+        this.allPotions = new ArrayList<>();
         this.utiles = utiles;
     }
 
@@ -80,7 +80,6 @@ public class Wizard extends Character{
             }
             case 2 -> {
                 System.out.println("Please choose another spell from the list");
-                ;
                 attendSpellClass(year);
             }
             default -> {
@@ -123,20 +122,20 @@ public class Wizard extends Character{
         System.out.println("1. Yes");
         System.out.println("2. No");
         int validate = this.utiles.choice(2);
-        switch (validate){
-            case 1 :
+        switch (validate) {
+            case 1 -> {
                 this.getPotions().add(potion);
                 this.allPotions.remove(potion);
                 System.out.println("You have successfully learn " + potion.getName());
-                break;
-            case 2:
-                System.out.println("Please choose another spell from the list");;
+            }
+            case 2 -> {
+                System.out.println("Please choose another spell from the list");
                 this.attendPotionClass(year);
-                break;
-            default :
+            }
+            default -> {
                 System.out.println("Please enter a valid number");
                 this.learnPotion(potion, year);
-                break;
+            }
         }
     }
 
@@ -145,10 +144,10 @@ public class Wizard extends Character{
 
     public void choiceEnemy(Year year, ArrayList<AbstractEnemy> enemies){
         System.out.println("Which enemy do you want to target ?");
-        if (enemies.get(0).getStatus() != "dead"){
+        if (enemies.get(0).getStatus().equalsIgnoreCase("dead")){
             System.out.println("1. " + enemies.get(0).getName());
         }
-        if (enemies.size() > 1 && enemies.get(1).getStatus() != "dead"){
+        if (enemies.size() > 1 && !enemies.get(1).getStatus().equals("dead")){
             System.out.println("2. " + enemies.get(1).getName());
         }
         int choice = this.utiles.choice(2);
@@ -257,20 +256,20 @@ public class Wizard extends Character{
         this.setDamage(this.getDamage()+0.5F);
         System.out.println("As a reward, you can choose to increase your health or your damages. What do you want to do ? \n1. Increase health\n2. Increase damages");
         int choice = this.utiles.choice(2);
-        switch (choice){
-            case 1 :
-                this.setHp(this.getHp()+50);
-                this.setMaxHP(this.getMaxHP()+50);
+        switch (choice) {
+            case 1 -> {
+                this.setHp(this.getHp() + 50);
+                this.setMaxHP(this.getMaxHP() + 50);
                 System.out.println("Your HP have been increased !");
-                break;
-            case 2:
-                this.setDamage(this.getDamage()+0.5F);
+            }
+            case 2 -> {
+                this.setDamage(this.getDamage() + 0.5F);
                 System.out.println("Your damages have been increased !");
-                break;
-            default :
+            }
+            default -> {
                 System.out.println("Please enter a valid number");
                 this.reward();
-                break;
+            }
         }
     }
 

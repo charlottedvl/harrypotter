@@ -20,20 +20,20 @@ public class Enemy extends AbstractEnemy{
     }
 
 
-    public void createEnemyLock(Year year){
+    public void createEnemyLock(){
         List<Spell> knownSpellsEnemy = new ArrayList<>();
         Spell attackLock = new Spell("Celled", 0, "You can't pass unless you destroy or open the lock", 1, "none", "none", "none");
         knownSpellsEnemy.add(attackLock);
         this.setKnownSpells(knownSpellsEnemy);
     }
-    public void createEnemyRock(Year year){
+    public void createEnemyRock(){
         List<Spell> knownSpellsEnemy = new ArrayList<>();
         Spell attackRock = new Spell("Rock", 0, "You can't pass unless you destroy the rock or clear the way", 1, "none", "none", "none");
         knownSpellsEnemy.add(attackRock);
         this.setKnownSpells(knownSpellsEnemy);
     }
 
-    public void createEnemyAttack(Year year){
+    public void createEnemyAttack(){
         List<Spell> knownSpellsEnemy = new ArrayList<>();
         Spell attack = new Spell("Attack", 15, "You can't pass unless you destroy the rock or clear the way", 1, "none", "none", "none");
         knownSpellsEnemy.add(attack);

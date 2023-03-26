@@ -1,7 +1,6 @@
 package com.isep.harrypotter.knowledge;
 
 
-import com.isep.harrypotter.character.*;
 import com.isep.harrypotter.character.Character;
 import lombok.Getter;
 import lombok.Setter;

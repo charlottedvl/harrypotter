@@ -11,8 +11,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 public class HelloApplication extends Application {
@@ -60,7 +58,7 @@ public class HelloApplication extends Application {
         player.setSpells(spells);
 
         // We create the list of forbidden spells
-        ArrayList<ForbiddenSpell> forbiddenSpells = new ArrayList<ForbiddenSpell>();
+        ArrayList<ForbiddenSpell> forbiddenSpells = new ArrayList<>();
         setup.createForbiddenSpell(forbiddenSpells);
         player.setForbiddenSpells(forbiddenSpells);
 
@@ -73,7 +71,7 @@ public class HelloApplication extends Application {
         ArrayList<ArrayList<Fight>> fights = setup.setupFights(years);
 
         //We start the years
-        setup.scholarshipProgress(years, player, spells, allPotions, fights);
+        setup.scholarshipProgress(years, player, fights);
 
     }
 
