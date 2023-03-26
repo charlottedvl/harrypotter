@@ -144,14 +144,20 @@ public class Wizard extends Character{
 
     public void choiceEnemy(Year year, ArrayList<AbstractEnemy> enemies){
         System.out.println("Which enemy do you want to target ?");
-        if (enemies.get(0).getStatus().equalsIgnoreCase("dead")){
-            System.out.println("1. " + enemies.get(0).getName());
+        int i = 1;
+        if (!enemies.get(0).getStatus().equalsIgnoreCase("dead")){
+            System.out.println(i + ". " + enemies.get(0).getName());
+            i++;
         }
         if (enemies.size() > 1 && !enemies.get(1).getStatus().equals("dead")){
-            System.out.println("2. " + enemies.get(1).getName());
+            System.out.println(i + ". " + enemies.get(1).getName());
         }
-        int choice = this.utiles.choice(2);
-        this.attack(year, enemies.get(choice-1));
+        int choice = this.utiles.choice(i);
+        if (enemies.get(0).getStatus().equalsIgnoreCase("dead")){
+            this.attack(year, enemies.get(choice));
+        }else {
+            this.attack(year, enemies.get(choice-1));
+        }
     }
 
 
@@ -163,15 +169,16 @@ public class Wizard extends Character{
         j = this.showSpells(this.getKnownSpells(), year, type, j);
         j = this.showSpells(this.getKnownSpells(), year, "none", j);
         int spell = this.utiles.choice(j);
+        float randomFloat = random();
         if (spell == 1) {
             this.attack(year, enemy);
         } else if (spell >= j) {
             System.out.println("Please enter a number between 1 and " + (j-1));
             this.chooseSpell(year, enemy, type);
         } else if (type.equals("attack")){
-            this.getKnownSpells().get(spell-2).useSpellAttack(this, enemy);
+            this.getKnownSpells().get(spell-2).useSpellAttack(this, enemy, randomFloat);
         } else {
-            this.getKnownSpells().get(spell-2).useSpellDefense(this, enemy);
+            this.getKnownSpells().get(spell-2).useSpellDefense(this, enemy, randomFloat);
         }
     }
     public void chooseForbiddenSpell(Year year, AbstractEnemy enemy, String type){
@@ -185,13 +192,14 @@ public class Wizard extends Character{
             }
         }
         int spell = this.utiles.choice(j);
+        float randomFloat = random();
         if (spell == 1) {
             this.attack(year, enemy);
         } else if (spell >= j) {
             System.out.println("Please enter a number between 1 and " + (j-1));
-            this.chooseSpell(year, enemy, type);
+            this.chooseForbiddenSpell(year, enemy, type);
         } else {
-            this.getForbiddenSpells().get(spell-2).useSpellAttack(this, enemy);
+            this.getForbiddenSpells().get(spell-2).useSpellAttack(this, enemy, randomFloat);
             this.testExpell();
         }
     }
@@ -214,15 +222,16 @@ public class Wizard extends Character{
         j = this.showPotions(this.getPotions(), year, type, j);
         j = this.showPotions(this.getPotions(), year, "none", j);
         int potion = this.utiles.choice(j);
+        float randomFloat = random();
         if (potion == 1) {
             this.attack(year, enemy);
         } else if (potion >= j) {
             System.out.println("Please enter a number between 1 and " + (j-1));
             this.choosePotion(year, enemy, type);
         } else if (type.equals("attack")){
-            this.getPotions().get(potion-2).usePotionAttack(this, enemy);
+            this.getPotions().get(potion-2).usePotionAttack(this, enemy, randomFloat);
         } else {
-            this.getPotions().get(potion-2).usePotionDefense(this, enemy);
+            this.getPotions().get(potion-2).usePotionDefense(this, enemy, randomFloat);
         }
     }
 
@@ -239,7 +248,7 @@ public class Wizard extends Character{
             default -> System.out.println("An error occurred, please restart the game !");
         }
         System.out.println("Do you want to use potions or spells ? \n1. Potions\n2. Spells\n3. Forbidden Spells");
-        int choice = this.utiles.choice(2);
+        int choice = this.utiles.choice(3);
         switch (choice) {
             case 1 -> this.choosePotion(year, enemy, type);
             case 2 -> this.chooseSpell(year, enemy, type);

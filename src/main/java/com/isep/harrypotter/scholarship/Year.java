@@ -30,7 +30,7 @@ public class Year {
     }
 
     public void trimester(Wizard player, int trimester){
-        int action = ChoiceAction(trimester);
+        int action = ChoiceAction(trimester, player);
         switch (action) {
             case 1 -> player.attendSpellClass(this);
             case 2 -> player.attendPotionClass(this);
@@ -45,7 +45,7 @@ public class Year {
             }
         }
     }
-    public int ChoiceAction(int trimester){
+    public int ChoiceAction(int trimester, Wizard player){
         String number ="";
         switch (trimester){
             case 1->number = "first";
@@ -58,7 +58,7 @@ public class Year {
         System.out.println("1. Follow the sorcery lesson");
         System.out.println("2. Follow the potion lesson");
         System.out.println("3. Skip class and have fun");
-        return scanner.nextInt();
+        return player.getUtiles().choice(3);
     }
 
     public float SkipClass(float percentSuccess){

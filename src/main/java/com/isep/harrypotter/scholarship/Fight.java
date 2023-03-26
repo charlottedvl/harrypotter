@@ -27,12 +27,12 @@ public class Fight {
             enemyTwo = new Enemy("Not An Enemy", 0, 0, year, "No need for an advice, it is already dead", 0F);
             enemyTwo.setStatus("dead");
         }
-        while (player.getHp()>0 && (enemyOne.getHp()>0 || enemyTwo.getHp()>0)){
+        while (player.getHp()>0 && (!enemyOne.getStatus().equalsIgnoreCase("dead") || !enemyTwo.getStatus().equalsIgnoreCase("dead") )){
             player.attack(year, enemyOne, enemyTwo);
-            if (player.getStatus().equalsIgnoreCase("dead") && enemyOne.getStatus().equalsIgnoreCase("dead")){
+            if (!player.getStatus().equalsIgnoreCase("dead") && !enemyOne.getStatus().equalsIgnoreCase("dead")){
                 enemyOne.attack(year, player, enemyTwo);
             }
-            if (player.getStatus().equalsIgnoreCase("dead") && enemyTwo.getStatus().equalsIgnoreCase("dead")) {
+            if (!player.getStatus().equalsIgnoreCase("dead") && !enemyTwo.getStatus().equalsIgnoreCase("dead")) {
                 enemyTwo.attack(year, player, enemyOne);
             }
         }

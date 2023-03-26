@@ -17,9 +17,9 @@ public abstract class AbstractSpell{
     private String effectTwo;
 
 
-    public void useSpellAttack(Character characterOne, Character characterTwo){
-        characterOne.effectAttack(characterTwo, this.getName(), this.getValue(), this.getEffectOne(), characterOne.getPercentSpells());
-        characterOne.effectAttack(characterTwo, this.getName(), this.getValue(), this.getEffectTwo(), characterOne.getPercentSpells());
+    public void useSpellAttack(Character characterOne, Character characterTwo, float randomFloat){
+        characterOne.effectAttack(characterTwo, this.getName(), this.getValue(), this.getEffectOne(), characterOne.getPercentSpells(), randomFloat);
+        characterOne.effectAttack(characterTwo, this.getName(), this.getValue(), this.getEffectTwo(), characterOne.getPercentSpells(), randomFloat);
     }
 }
 

@@ -27,13 +27,13 @@ public class Potion {
 
 
 
-    public void usePotionAttack(Wizard player, Character characterTwo){
-        player.effectAttack(characterTwo, this.name, this.value, this.effectOne, player.getPercentPotion());
-        player.effectAttack(characterTwo, this.name, this.value, this.effectTwo, player.getPercentPotion());
+    public void usePotionAttack(Wizard player, Character characterTwo, float randomFloat){
+        player.effectAttack(characterTwo, this.name, this.value, this.effectOne, player.getPercentPotion(), randomFloat);
+        player.effectAttack(characterTwo, this.name, this.value, this.effectTwo, player.getPercentPotion(),randomFloat);
     }
 
-    public void usePotionDefense(Wizard player, Character characterTwo){
-        player.effectDefense(characterTwo, this.name, this.value, this.effectOne, player.getPercentPotion());
-        player.effectDefense(characterTwo, this.name, this.value, this.effectTwo, player.getPercentPotion());
+    public void usePotionDefense(Wizard player, Character characterTwo, float randomFloat){
+        player.effectDefense(characterTwo, this.name, this.value, this.effectOne, player.getPercentPotion(), randomFloat);
+        player.effectDefense(characterTwo, this.name, this.value, this.effectTwo, player.getPercentPotion(), randomFloat);
     }
 }
