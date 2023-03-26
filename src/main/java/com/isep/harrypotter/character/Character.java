@@ -109,18 +109,16 @@ public abstract class Character {
 
 
 
-    public void effectAttack(Character characterTwo, String name, float value, String effect, float percent){
-        float randomFloat = random();
+    public void effectAttack(Character characterTwo, String name, float value, String effect, float percent, float randomFloat){
         switch (effect){
-            case "light"-> this.light(characterTwo, name, percent, randomFloat);
+            case "light"-> this.light(characterTwo, name, randomFloat, percent);
             case "confusion"-> this.confusion(characterTwo, name, value, randomFloat, percent);
             case "attire" -> this.attire(characterTwo, name, randomFloat, percent);
             case "reduce" -> this.reduce(characterTwo, name, randomFloat, percent);
             case "damages" -> this.damages(characterTwo, name, value, randomFloat, percent);
         }
     }
-    public void effectDefense(Character characterTwo, String name, float value, String effect, float percent){
-        float randomFloat = random();
+    public void effectDefense(Character characterTwo, String name, float value, String effect, float percent, float randomFloat){
         switch (effect) {
             case "heal" -> heal(characterTwo, value, randomFloat, name, percent);
             case "increase" -> increase(name, randomFloat, percent);
@@ -133,7 +131,7 @@ public abstract class Character {
         String nameCharacter = names[0];
         String opponentName = names[1];
         float damages = (this.getDamage()*value);
-        if (percent >= randomFloat){
+        if (randomFloat <= percent){
             if (opponent instanceof Boss boss){
                 boss.testBoss(name);
             } else {
@@ -143,7 +141,7 @@ public abstract class Character {
                     System.out.println(nameCharacter + " successfully use " + name +". " + opponentName + " " + opponent.getHp() + " HP.");
                 }
             }
-        } else if (randomFloat > 0.95F){
+        } else if (randomFloat >= 0.98F){
             this.setHp(this.getHp()-damages);
             boolean isDead;
             isDead = this.isDead();
@@ -207,7 +205,7 @@ public abstract class Character {
         }
     }
 
-    public void light(Character opponent, String name, float percent, float randomFloat){
+    public void light(Character opponent, String name,float randomFloat, float percent){
         if (randomFloat <= percent) {
             if (opponent.getName().equalsIgnoreCase("Shadow")) {
                 opponent.setHp(0F);

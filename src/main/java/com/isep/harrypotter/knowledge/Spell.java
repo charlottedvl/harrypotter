@@ -19,9 +19,9 @@ public class Spell extends AbstractSpell{
 
 
 
-    public void useSpellDefense(Character characterOne, Character characterTwo){
-        characterOne.effectDefense(characterTwo, this.getName(), this.getValue(), this.getEffectOne(), characterOne.getPercentSpells());
-        characterOne.effectDefense(characterTwo, this.getName(), this.getValue(), this.getEffectTwo(), characterOne.getPercentSpells());
+    public void useSpellDefense(Character characterOne, Character characterTwo, float randomFloat){
+        characterOne.effectDefense(characterTwo, this.getName(), this.getValue(), this.getEffectOne(), characterOne.getPercentSpells(), randomFloat);
+        characterOne.effectDefense(characterTwo, this.getName(), this.getValue(), this.getEffectTwo(), characterOne.getPercentSpells(), randomFloat);
     }
 
 

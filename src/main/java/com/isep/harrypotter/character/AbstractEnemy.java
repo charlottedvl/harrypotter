@@ -26,7 +26,8 @@ public abstract class AbstractEnemy extends Character {
         int lengthSpells = this.getKnownSpells().size();
         Random rand = new Random();
         int randomNumber = rand.nextInt(lengthSpells);
-        this.getKnownSpells().get(randomNumber).useSpellAttack(this, player);
+        float randomFloat = random();
+        this.getKnownSpells().get(randomNumber).useSpellAttack(this, player, randomFloat);
     }
 
 }
