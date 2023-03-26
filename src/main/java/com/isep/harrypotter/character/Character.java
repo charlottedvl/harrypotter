@@ -1,6 +1,6 @@
 package com.isep.harrypotter.character;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +9,7 @@ import com.isep.harrypotter.scholarship.Year;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
+
 
 @Getter @Setter
 public abstract class Character {
@@ -22,7 +22,7 @@ public abstract class Character {
     private float damage;
     private int vulnerability = 0;
     public Character(String name, float hp, int maxHP, float damage){
-        List<Spell> knownSpells = new ArrayList<Spell>();
+        List<Spell> knownSpells = new ArrayList<>();
         this.name = name;
         this.knownSpells = knownSpells;
         this.hp = hp;
@@ -35,8 +35,7 @@ public abstract class Character {
 
     public float random(){
         Random random = new Random();
-        float randomFloat = random.nextFloat();
-        return randomFloat;
+        return random.nextFloat();
     }
 
 
@@ -45,15 +44,15 @@ public abstract class Character {
     public void attack(Year year, Character characterTwo, Character characterThree) {
         boolean test = testStatus();
         if (this instanceof Wizard) {
-            if (test == true) {
-                ArrayList<AbstractEnemy> enemies = new ArrayList<AbstractEnemy>();
+            if (test) {
+                ArrayList<AbstractEnemy> enemies = new ArrayList<>();
                 enemies.add((AbstractEnemy) characterTwo);
                 enemies.add((AbstractEnemy) characterThree);
                 Wizard player = (Wizard) this;
                 player.choiceEnemy(year, enemies);
             }
         } else if (this instanceof AbstractEnemy) {
-            if (test == true){
+            if (test){
                 AbstractEnemy enemy = (AbstractEnemy) this;
                 enemy.attack((Wizard) characterTwo);
             }
@@ -63,19 +62,19 @@ public abstract class Character {
     public boolean testStatus(){
         String status = this.status;
         boolean test = true;
-        switch (status){
-            case "Confused1":
+        switch (status) {
+            case "Confused1" -> {
                 this.setStatus("OK");
                 test = false;
-                break;
-            case "Confused2":
+            }
+            case "Confused2" -> {
                 this.setStatus("Confused1");
                 test = false;
-                break;
-            case "Reduced1" :
+            }
+            case "Reduced1" -> {
                 this.setStatus("OK");
-                this.setDamage(getDamage()+0.3F);
-                break;
+                this.setDamage(getDamage() + 0.3F);
+            }
         }
         return test;
     }
@@ -84,7 +83,7 @@ public abstract class Character {
         if (this.hp < 0){
             this.setHp(0);
             if (this instanceof AbstractEnemy){
-                ((AbstractEnemy) this).setStatus("dead");
+                this.setStatus("dead");
                 System.out.println(this.name + " is dead.");
             } else {
                 System.out.println("Oh no ! You are dead. You can't stop Voldemort anymore.\nYou can try again if you dare to !");
@@ -115,8 +114,8 @@ public abstract class Character {
         switch (effect){
             case "light"-> this.light(characterTwo, name, percent, randomFloat);
             case "confusion"-> this.confusion(characterTwo, name, value, randomFloat, percent);
-            case "attire" -> this.attire(characterTwo, name, value, randomFloat, percent);
-            case "reduce" -> this.reduce(characterTwo, name, value, randomFloat, percent);
+            case "attire" -> this.attire(characterTwo, name, randomFloat, percent);
+            case "reduce" -> this.reduce(characterTwo, name, randomFloat, percent);
             case "damages" -> this.damages(characterTwo, name, value, randomFloat, percent);
         }
     }
@@ -125,7 +124,7 @@ public abstract class Character {
         switch (effect) {
             case "heal" -> heal(characterTwo, value, randomFloat, name, percent);
             case "increase" -> increase(name, randomFloat, percent);
-            case "expecto" -> expecto(characterTwo, name, value, randomFloat, percent);
+            case "expecto" -> expecto(characterTwo);
         }
     }
 
@@ -135,20 +134,20 @@ public abstract class Character {
         String opponentName = names[1];
         float damages = (this.getDamage()*value);
         if (percent >= randomFloat){
-            if (opponent instanceof Boss){
-                Boss boss = (Boss) opponent;
+            if (opponent instanceof Boss boss){
                 boss.testBoss(name);
             } else {
                 opponent.setHp(opponent.getHp()-damages);
                 boolean isDead = opponent.isDead();
-                if (isDead == false){
+                if (!isDead){
                     System.out.println(nameCharacter + " successfully use " + name +". " + opponentName + " " + opponent.getHp() + " HP.");
                 }
             }
         } else if (randomFloat > 0.95F){
             this.setHp(this.getHp()-damages);
-            boolean isDead = this.isDead();
-            if (isDead == false){
+            boolean isDead;
+            isDead = this.isDead();
+            if (!isDead){
                 System.out.println(nameCharacter +" misuse " + name + " ! " + nameCharacter + " now " + this.getHp() + " HP.");
             } else {
                 System.out.println(nameCharacter +" been defeated.");
@@ -158,7 +157,7 @@ public abstract class Character {
         }
     }
 
-    public void reduce(Character opponent, String name, float value, float randomFloat, float percent){
+    public void reduce(Character opponent, String name, float randomFloat, float percent){
         String [] names = this.findName(opponent);
         String nameCharacter = names[0];
         String opponentName = names[1];
@@ -175,13 +174,11 @@ public abstract class Character {
         }
     }
 
-    public void attire(Character opponent, String name, float value, float randomFloat, float percent){
+    public void attire(Character opponent, String name, float randomFloat, float percent){
         String [] names = this.findName(opponent);
         String nameCharacter = names[0];
-        String opponentName = names[1];
         if (randomFloat <= percent){
-            if (opponent instanceof Boss) {
-                Boss boss = (Boss) opponent;
+            if (opponent instanceof Boss boss) {
                 boss.testBossAccio();
                 System.out.println(nameCharacter + " succeeded to use " + name + ". ");
             } else {
@@ -192,10 +189,7 @@ public abstract class Character {
         }
     }
 
-    public void expecto(Character opponent, String name, float value, float randomFloat, float percent){
-        String [] names = this.findName(opponent);
-        String nameCharacter = names[0];
-        String opponentName = names[1];
+    public void expecto(Character opponent){
         if (opponent.getName().equals("dementor")){
             opponent.checkCount();
         } else {
@@ -215,16 +209,15 @@ public abstract class Character {
 
     public void light(Character opponent, String name, float percent, float randomFloat){
         if (randomFloat <= percent) {
-            if (opponent.getName() == "Shadow") {
+            if (opponent.getName().equalsIgnoreCase("Shadow")) {
                 opponent.setHp(0F);
                 opponent.setStatus("dead");
                 System.out.println("The shadow disappears.");
-            } else if (opponent.getName() == "Lock") {
+            } else if (opponent.getName().equalsIgnoreCase("Lock")) {
                 opponent.setHp(0F);
                 opponent.setStatus("dead");
                 System.out.println("You have succeeded to open the lock !");
-            } else if (this instanceof AbstractEnemy && !name.equals("Allohomora")) {
-                AbstractEnemy enemy = (AbstractEnemy) this;
+            } else if (this instanceof AbstractEnemy enemy && !name.equals("Allohomora")) {
                 System.out.println("Advice to defeat this opponent : " + enemy.getAdvice());
             } else if (name.equals("Allohomora")){
                 System.out.println(name + " succeeded but no target is available. Nothing happened");
@@ -274,15 +267,15 @@ public abstract class Character {
 
     public void increase(String name, float randomFloat, float percent){
         if (randomFloat <= percent) {
-            if (name.equals("Strengthening Solution")) {
-                this.setDamage(this.getDamage() + 0.2F);
-            } else if (name.equals("Wit-Sharpening Potion")) {
-                this.setPercentSpells(this.getPercentSpells() + 0.05F);
-            } else if (name.equals("Felix Felicis")) {
-                //The character is a wizard
-                Wizard player = (Wizard) this;
-                player.setPercentSpells(this.getPercentSpells() + 0.05F);
-                player.setPercentPotion(player.getPercentPotion() + 0.05F);
+            switch (name) {
+                case "Strengthening Solution" -> this.setDamage(this.getDamage() + 0.2F);
+                case "Wit-Sharpening Potion" -> this.setPercentSpells(this.getPercentSpells() + 0.05F);
+                case "Felix Felicis" -> {
+                    //The character is a wizard
+                    Wizard player = (Wizard) this;
+                    player.setPercentSpells(this.getPercentSpells() + 0.05F);
+                    player.setPercentPotion(player.getPercentPotion() + 0.05F);
+                }
             }
             System.out.println("The use of " + name + "succeeded ! You have improved your performances");
         } else {

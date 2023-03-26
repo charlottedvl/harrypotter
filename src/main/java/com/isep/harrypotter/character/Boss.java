@@ -1,6 +1,6 @@
 package com.isep.harrypotter.character;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,14 +21,14 @@ public class Boss extends AbstractEnemy{
         setStatus("OK");
     }
 
-    public void createAttackBoss(Year year){
+    public void createAttackBoss(){
         List<Spell> knownSpells = new ArrayList<>();
         Spell attack = new Spell("Stroke", 15, "Make huge damages", 1, "attack", "damages", "none");
         knownSpells.add(attack);
         this.setKnownSpells(knownSpells);
     }
 
-    public void createAttackVoldemort(Year year){
+    public void createAttackVoldemort(){
         List<Spell> knownSpells = new ArrayList<>();
         Spell avadaKedavra = new Spell("Avada Kedavra", 2000, "Kill immediately", 1, "attack", "damages", "none");
         knownSpells.add(avadaKedavra);
@@ -39,7 +39,7 @@ public class Boss extends AbstractEnemy{
         this.setKnownSpells(knownSpells);
     }
 
-    public void createAttackBellatrix(Year year){
+    public void createAttackBellatrix(){
         List<Spell> knownSpells = new ArrayList<>();
         Spell doloris = new Spell("Doloris", 40, "Make someone suffer and provokes damages", 1, "attack", "damages", "none");
         knownSpells.add(doloris);
@@ -50,18 +50,14 @@ public class Boss extends AbstractEnemy{
 
     public void checkVulnerability(){
         this.setVulnerability(this.getVulnerability()+1);
-        switch (this.getVulnerability()){
-            case 1:
-                System.out.println("Well done ! Continue this way !");
-                break;
-            case 2:
-                System.out.println("You have nearly defeated it !");
-                break;
-            case 3:
+        switch (this.getVulnerability()) {
+            case 1 -> System.out.println("Well done ! Continue this way !");
+            case 2 -> System.out.println("You have nearly defeated it !");
+            case 3 -> {
                 this.setHp(0F);
                 this.setStatus("dead");
-                System.out.println("The "+ this.getName() + " is knocked out ! Congrats");
-                break;
+                System.out.println("The " + this.getName() + " is knocked out ! Congrats");
+            }
         }
     }
 

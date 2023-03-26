@@ -1,6 +1,6 @@
 package com.isep.harrypotter;
 
-import java.util.Random;
+
 import java.util.Scanner;
 
 public class Utiles {

@@ -1,12 +1,11 @@
 package com.isep.harrypotter.character;
 
-import com.isep.harrypotter.scholarship.Fight;
+
 import com.isep.harrypotter.scholarship.Year;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Random;
 
 @Getter @Setter
