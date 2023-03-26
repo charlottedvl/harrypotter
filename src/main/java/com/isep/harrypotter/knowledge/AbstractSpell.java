@@ -1,0 +1,25 @@
+package com.isep.harrypotter.knowledge;
+
+import com.isep.harrypotter.character.Character;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@AllArgsConstructor
+@Getter @Setter
+public abstract class AbstractSpell{
+    private String name;
+    private float value;
+    private String description;
+    private int year;
+    private String type;
+    private String effectOne;
+    private String effectTwo;
+
+
+    public void useSpellAttack(Character characterOne, Character characterTwo){
+        characterOne.effectAttack(characterTwo, this.getName(), this.getValue(), this.getEffectOne(), characterOne.getPercentSpells());
+        characterOne.effectAttack(characterTwo, this.getName(), this.getValue(), this.getEffectTwo(), characterOne.getPercentSpells());
+    }
+}
+

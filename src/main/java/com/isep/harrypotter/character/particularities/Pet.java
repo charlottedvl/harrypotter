@@ -1,5 +1,4 @@
-package com.isep.harrypotter;
-
+package com.isep.harrypotter.character.particularities;
 public enum Pet {
     Owl,
     Cat,

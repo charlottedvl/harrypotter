@@ -1,7 +1,7 @@
-package com.isep.harrypotter;
-
+package com.isep.harrypotter.character.particularities;
 import java.util.Random;
 
+import com.isep.harrypotter.character.Wizard;
 public class House {
     Houses name;
     enum Houses {

@@ -1,9 +1,14 @@
-package com.isep.harrypotter;
+package com.isep.harrypotter.scholarship;
 
+import com.isep.harrypotter.Setup;
+import com.isep.harrypotter.knowledge.Potion;
+import com.isep.harrypotter.knowledge.Spell;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+
+import com.isep.harrypotter.character.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -73,11 +78,11 @@ public class Year {
         return percentFireworks;
     }
 
-    public void StartFightsOne(Wizard player){
-        ArrayList<Fight> fightsOne = createFightYearOne(this);
-        Fight firstFight = fightsOne.get(0);
-        Fight secondFight = fightsOne.get(1);
-        Fight bossFight = fightsOne.get(2);
+
+    public void StartFights(Wizard player, List<Fight> fights){
+        Fight firstFight = fights.get(0);
+        Fight secondFight = fights.get(1);
+        Fight bossFight = fights.get(2);
         System.out.println(firstFight.getDescription());
         firstFight.fight(player, this);
         System.out.println(secondFight.getDescription());
@@ -86,39 +91,6 @@ public class Year {
         bossFight.fight(player, this);
     }
 
-
-    public ArrayList<Fight> createFightYearOne(Year year){
-        //Enemies for first fight
-        Enemy shadowOne = new Enemy("Shadow", 1000, 1000, year, "Use something that create light to destroy it");
-        shadowOne.createEnemyShadow(year);
-        Enemy shadowTwo = new Enemy("Shadow", 1000, 1000, year, "Use something that create light to destroy it");
-        shadowTwo.createEnemyShadow(year);
-        List<AbstractEnemy> enemiesOne = new ArrayList<>();
-        enemiesOne.add(shadowOne);
-        enemiesOne.add(shadowTwo);
-        Fight FOneYOne = new Fight(year, enemiesOne, "Oh no ! It seems that you are in trouble. In the dungeon, the shadows scares you. You become to be paranoid and hurt yourself. \nTry to reassure yourself", 1);
-        //Enemies for second fight
-        Enemy lock = new Enemy("Lock",  70, 70, year, "Use a spell that can open lock to pass this adventure");
-        lock.createEnemyLock(year);
-        Enemy rock = new Enemy("Rock",  30, 30, year, "Make damages to destroy it");
-        rock.createEnemyRock(year);
-        List<AbstractEnemy> enemiesTwo = new ArrayList<>();
-        enemiesTwo.add(lock);
-        enemiesTwo.add(rock);
-        Fight FTwoYOne = new Fight(year, enemiesTwo, "When you enter deeper in the Dungeon, you see that the way is blocked by a rock and a door closed by a lock. \nClear the way to pass", 2);
-        //Enemies for the Boss fight
-        Boss troll = new Boss("Troll", 1000, 1000, year, "Use Wingardium Leviosa to make damages on his head");
-        troll.createTroll(year);
-        List<AbstractEnemy> enemiesBoss = new ArrayList<>();
-        enemiesBoss.add(troll);
-        Fight FBoss = new Fight(year, enemiesBoss, "There is a HUUUUGE Troll on your way ! Make him inconscious. Be careful, he is insensible to potion", 3);
-        //Create the list of fights for the first year
-        ArrayList<Fight> fights = new ArrayList<>();
-        fights.add(FOneYOne);
-        fights.add(FTwoYOne);
-        fights.add(FBoss);
-        return fights;
-    }
 
 
 }
