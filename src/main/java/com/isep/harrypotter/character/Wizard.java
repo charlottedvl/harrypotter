@@ -20,6 +20,7 @@ public class Wizard extends Character{
     private House house;
     private List<Potion> potions;
     private List<Spell> spells;
+    private List<Spell> defenseKnownSpells;
     private List<ForbiddenSpell> forbiddenSpells;
     private List<Potion> allPotions;
     private float percentPotion = 0.80F;
@@ -35,6 +36,7 @@ public class Wizard extends Character{
         setStatus("OK");
         this.spells = new ArrayList<>();
         this.forbiddenSpells = new ArrayList<>();
+        this.defenseKnownSpells = new ArrayList<>();
         this.allPotions = new ArrayList<>();
         this.utiles = utiles;
     }
@@ -50,22 +52,29 @@ public class Wizard extends Character{
     }
 
     public int showSpells(List<Spell> spells, Year year, String type, int i) {
-        if (type.equals("")){
-            for (Spell spell : spells) {
-                if (spell.getYear() <= year.getNumberYear()) {
-                    System.out.println(i + ". " + spell.getName() + " : " + spell.getDescription());
-                    i++;
+        for (int y = 1; y<=7; y++){
+            if (type.equals("")){
+                for (Spell spell : spells) {
+                    if (spell.getYear() <= year.getNumberYear()) {
+                        if (spell.getYear() == y){
+                            System.out.println(i + ". " + spell.getName() + " : " + spell.getDescription());
+                            i++;
+                        }
+                    }
                 }
-            }
-        } else {
-            for (Spell spell : spells) {
-                if (spell.getYear() <= year.getNumberYear() && spell.getType().equalsIgnoreCase(type)){
-                    System.out.println(i + ". " + spell.getName() + " : " + spell.getDescription());
-                    i++;
+            } else {
+                for (Spell spell : spells) {
+                    if (spell.getYear() <= year.getNumberYear() && spell.getType().equalsIgnoreCase(type)){
+                        if (spell.getYear() == y) {
+                            System.out.println(i + ". " + spell.getName() + " : " + spell.getDescription());
+                            i++;
+                        }
+                    }
                 }
             }
         }return i;
     }
+
 
     public void learnSpell(Spell spell, Year year){
         System.out.println("Are you sur you want to learn " + spell.getName() + " ?");
@@ -74,7 +83,11 @@ public class Wizard extends Character{
         int validate = this.utiles.choice(2);
         switch (validate) {
             case 1 -> {
-                this.getKnownSpells().add(spell);
+                if (spell.getType().equalsIgnoreCase("defense")){
+                    this.getDefenseKnownSpells().add(spell);
+                } else {
+                    this.getKnownSpells().add(spell);
+                }
                 this.spells.remove(spell);
                 System.out.println("You have successfully learn " + spell.getName());
             }
@@ -166,8 +179,11 @@ public class Wizard extends Character{
     public void chooseSpell(Year year, AbstractEnemy enemy, String type){
         int j = 2;
         System.out.println("1. I changed my mind");
-        j = this.showSpells(this.getKnownSpells(), year, type, j);
-        j = this.showSpells(this.getKnownSpells(), year, "none", j);
+        if (type.equalsIgnoreCase("attack")) {
+            j = this.showSpells(this.getKnownSpells(), year,"attack", j);
+        } else {
+            j = this.showSpells(this.getDefenseKnownSpells(), year, "defense", j);
+        }
         int spell = this.utiles.choice(j);
         float randomFloat = random();
         if (spell == 1) {
@@ -220,7 +236,6 @@ public class Wizard extends Character{
         int j = 2;
         System.out.println("1. I changed my mind");
         j = this.showPotions(this.getPotions(), year, type, j);
-        j = this.showPotions(this.getPotions(), year, "none", j);
         int potion = this.utiles.choice(j);
         float randomFloat = random();
         if (potion == 1) {
