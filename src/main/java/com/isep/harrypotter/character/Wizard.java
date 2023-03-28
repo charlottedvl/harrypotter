@@ -155,7 +155,7 @@ public class Wizard extends Character{
 
 
 
-    public void choiceEnemy(Year year, ArrayList<AbstractEnemy> enemies){
+    public void choiceEnemy(ArrayList<AbstractEnemy> enemies, Year year){
         System.out.println("Which enemy do you want to target ?");
         int i = 1;
         if (!enemies.get(0).getStatus().equalsIgnoreCase("dead")){
@@ -167,11 +167,12 @@ public class Wizard extends Character{
         }
         int choice = this.utiles.choice(i);
         if (enemies.get(0).getStatus().equalsIgnoreCase("dead")){
-            this.attack(year, enemies.get(choice));
+            this.chooseAttackDefense(year, enemies.get(choice));
         }else {
-            this.attack(year, enemies.get(choice-1));
+            this.chooseAttackDefense(year, enemies.get(choice-1));
         }
     }
+
 
 
 
@@ -187,7 +188,7 @@ public class Wizard extends Character{
         int spell = this.utiles.choice(j);
         float randomFloat = random();
         if (spell == 1) {
-            this.attack(year, enemy);
+            this.chooseWhatUse(year, enemy, type);
         } else if (spell >= j) {
             System.out.println("Please enter a number between 1 and " + (j-1));
             this.chooseSpell(year, enemy, type);
@@ -210,7 +211,7 @@ public class Wizard extends Character{
         int spell = this.utiles.choice(j);
         float randomFloat = random();
         if (spell == 1) {
-            this.attack(year, enemy);
+            this.chooseWhatUse(year, enemy, type);
         } else if (spell >= j) {
             System.out.println("Please enter a number between 1 and " + (j-1));
             this.chooseForbiddenSpell(year, enemy, type);
@@ -239,7 +240,7 @@ public class Wizard extends Character{
         int potion = this.utiles.choice(j);
         float randomFloat = random();
         if (potion == 1) {
-            this.attack(year, enemy);
+            this.chooseAttackDefense(year, enemy);
         } else if (potion >= j) {
             System.out.println("Please enter a number between 1 and " + (j-1));
             this.choosePotion(year, enemy, type);
@@ -250,18 +251,24 @@ public class Wizard extends Character{
         }
     }
 
-
-
-
-    public void attack(Year year, AbstractEnemy enemy){
-        System.out.println("Do you want to use defense or attack ? \n1. Defense\n2. Attack");
+    public void chooseAttackDefense(Year year, AbstractEnemy enemy){
+        System.out.println("Do you want to use defense or attack ? \n1. Attack\n2. Defense");
         int choose = this.utiles.choice(2);
         String type = "";
         switch (choose) {
-            case 1-> type = "defense";
-            case 2 -> type = "attack";
+            case 1 -> this.chooseWhatUse(year, enemy, "attack");
+            case 2 -> this.defend(year, enemy);
             default -> System.out.println("An error occurred, please restart the game !");
         }
+    }
+
+
+
+    public void defend(Year year, AbstractEnemy enemyOne){
+        this.chooseWhatUse(year, enemyOne, "defense");
+    }
+
+    public void chooseWhatUse(Year year, AbstractEnemy enemy, String type){
         System.out.println("Do you want to use potions or spells ? \n1. Potions\n2. Spells\n3. Forbidden Spells");
         int choice = this.utiles.choice(3);
         switch (choice) {

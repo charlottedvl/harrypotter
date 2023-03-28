@@ -133,11 +133,11 @@ public class Setup {
 
     public ArrayList<Fight> createFightYearTwo(Year year){
         //Enemies for first fight
-        Enemy rival = new Enemy("Your rival", 150, 150, year, "Make him KO or disarm him", 2F);
+        Enemy rival = new Enemy("Your rival", 150, 150, year, "Make him KO or disarm him", 1.5F);
         rival.createEnemyAttack();
         List<AbstractEnemy> enemiesOne = new ArrayList<>();
         enemiesOne.add(rival);
-        Fight FOneYTwo = new Fight(year, enemiesOne, "The year pass by and many disappearances happen. The professors suspect the Chamber of Secret to be open. They decide to set up a duel between students. You are chosen against your principal rival. \nDon't kill your opponent or you'll be expel ! ", 1);
+        Fight FOneYTwo = new Fight(year, enemiesOne, "The year pass by and many disappearances happen. The professors suspect the Chamber of Secret to be open. They decide to set up a duel between students. You are chosen against your principal rival.", 1);
         //Enemies for second fight
         Enemy spidersOne = new Enemy("Spiders",  120, 120, year, "Defeat them ! Spiders flee when they are in the light", 1.5F);
         spidersOne.createEnemyAttack();
