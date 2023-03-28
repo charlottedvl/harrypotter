@@ -41,20 +41,18 @@ public abstract class Character {
 
 
 
-    public void attack(Year year, Character characterTwo, Character characterThree) {
+    public void attack(Year year, Character characterTwo) {
         boolean test = testStatus();
         if (this instanceof Wizard) {
             if (test) {
-                ArrayList<AbstractEnemy> enemies = new ArrayList<>();
-                enemies.add((AbstractEnemy) characterTwo);
-                enemies.add((AbstractEnemy) characterThree);
                 Wizard player = (Wizard) this;
-                player.choiceEnemy(year, enemies);
+                player.attack(year, characterTwo);
             }
         } else if (this instanceof AbstractEnemy) {
-            if (test){
+            if (test) {
                 AbstractEnemy enemy = (AbstractEnemy) this;
-                enemy.attack((Wizard) characterTwo);
+                Wizard player = (Wizard) characterTwo;
+                enemy.attack(player);
             }
         }
     }
@@ -80,13 +78,14 @@ public abstract class Character {
     }
 
     public boolean isDead(){
-        if (this.hp < 0){
+        if (this.hp <= 0){
             this.setHp(0);
             if (this instanceof AbstractEnemy){
                 this.setStatus("dead");
                 System.out.println(this.name + " is dead.");
             } else {
                 System.out.println("Oh no ! You are dead. You can't stop Voldemort anymore.\nYou can try again if you dare to !");
+                System.exit(0);
             }
             return true;
         } else {
@@ -126,7 +125,7 @@ public abstract class Character {
         }
     }
 
-    public  void damages(Character opponent, String name, float value, float randomFloat, float percent){
+    public void damages(Character opponent, String name, float value, float randomFloat, float percent){
         String [] names = this.findName(opponent);
         String nameCharacter = names[0];
         String opponentName = names[1];
@@ -210,15 +209,15 @@ public abstract class Character {
             if (opponent.getName().equalsIgnoreCase("Shadow")) {
                 opponent.setHp(0F);
                 opponent.setStatus("dead");
-                System.out.println("The shadow disappears.");
-            } else if (opponent.getName().equalsIgnoreCase("Lock")) {
+                System.out.println("The enemy disappears.");
+            } else if (opponent.getName().equalsIgnoreCase("Lock") && name.equals("Allohomora")) {
                 opponent.setHp(0F);
                 opponent.setStatus("dead");
                 System.out.println("You have succeeded to open the lock !");
             } else if (this instanceof AbstractEnemy enemy && !name.equals("Allohomora")) {
                 System.out.println("Advice to defeat this opponent : " + enemy.getAdvice());
             } else if (name.equals("Allohomora")){
-                System.out.println(name + " succeeded but no target is available. Nothing happened");
+                System.out.println(name + " succeeded and the light shine bright...");
             }
         } else {
             System.out.println(name + " failed. Nothing happened...");
@@ -229,11 +228,18 @@ public abstract class Character {
         String [] names = this.findName(opponent);
         String nameCharacter = names[0];
         String opponentName = names[1];
+        float valueEffective = (this.getDamage()*value);
         if (randomFloat <= percent){
-            this.setHp(this.getHp() + value);
+            this.setHp(this.getHp() + valueEffective);
+            if (this.getHp() > this.getMaxHP()){
+                this.setHp(this.getMaxHP());
+            }
             System.out.println(nameCharacter + " succeeded to use " + name + ". " + nameCharacter + " been healed. It has now " + this.getHp() + " HP.");
         } else if (randomFloat > 0.95F){
             opponent.setHp(opponent.getHp() + value);
+            if (opponent.getHp() > opponent.getMaxHP()){
+                opponent.setHp(opponent.getMaxHP());
+            }
             System.out.println(nameCharacter + " failed to use " + name + ". " + opponentName + " been healed. It has now " + opponent.getHp() + " HP.");
         } else {
             System.out.println(name + " failed. Nothing happened...");
@@ -245,21 +251,11 @@ public abstract class Character {
         String nameCharacter = names[0];
         String opponentName = names[1];
         if (randomFloat <= percent){
-            if (value == 1F){
-                opponent.setStatus("Confused1");
-                System.out.println(nameCharacter + " use " + name + " that bring unconsciousness. " + opponentName + " been set out of the fight for one turn.");
-            } else {
-                opponent.setStatus("Confused2");
-                System.out.println(nameCharacter + " cast a spell that bring unconsciousness. " + opponentName + " been set out of the fight for two turns.");
-            }
+            opponent.setStatus("Confused2");
+            System.out.println(nameCharacter + " cast a spell that bring unconsciousness. " + opponentName + " been set out of the fight for two turns.");
         } else {
-            if (value == 1F){
-                this.setStatus("Confused1");
-                System.out.println(nameCharacter + " failed to cast a spell that bring unconsciousness. " + nameCharacter + " been set out of the fight for one turn.");
-            } else {
-                this.setStatus("Confused2");
-                System.out.println(nameCharacter + " failed to cast a spell that bring unconsciousness. " + nameCharacter + " been set out of the fight for two turns.");
-            }
+            this.setStatus("Confused2");
+            System.out.println(nameCharacter + " failed to cast a spell that bring unconsciousness. " + nameCharacter + " been set out of the fight for two turns.");
         }
     }
 

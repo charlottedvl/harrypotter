@@ -20,9 +20,9 @@ public class Setup {
         Spell confringo = new Spell("Confringo", 50F, "Make things explode", 6, "attack", "light", "damages");
         Spell sectumsempra = new Spell("Sectumsempra", 45F, "Your opponent bleed when you use this spell", 6, "attack", "damages", "none");
         Spell accio = new Spell("Accio", 0F, "Attract objects", 2, "attack", "attire", "none");
-        Spell lumos = new Spell("Lumos", 0F, "Create a light at the end of your wand. Useful to see in the dark... and to reassure you", 1, "none", "light", "none");
-        Spell allohomora = new Spell("Allohomora", 0F, "Open any lock you want", 1, "none", "light", "none");
-        Spell wingardiumLeviosa = new Spell("Wingardium Leviosa", 30F, "Levitate any object, provided you pronounce the magic formula correctly", 1, "none", "damages", "none");
+        Spell lumos = new Spell("Lumos", 0F, "Create a light at the end of your wand. Useful to see in the dark... and to reassure you", 1, "attack", "light", "none");
+        Spell allohomora = new Spell("Allohomora", 0F, "Open any lock you want", 1, "attack", "light", "none");
+        Spell wingardiumLeviosa = new Spell("Wingardium Leviosa", 30F, "Levitate any object, provided you pronounce the magic formula correctly", 1, "attack", "damages", "none");
         Spell expecto = new Spell("Expecto Patronum", 0F, "Send away dementors", 3, "defense", "expecto", "none");
         Spell reducto = new Spell("Reducto", 0F, "Reduce the size of an opponent. It makes less damages for two turns", 3, "defense", "reduce", "none");
         Spell stupefy = new Spell("Stupefy", 20F, "Immobilize the enemy", 4, "defense", "confusion", "damages");
@@ -133,11 +133,11 @@ public class Setup {
 
     public ArrayList<Fight> createFightYearTwo(Year year){
         //Enemies for first fight
-        Enemy rival = new Enemy("Your rival", 150, 150, year, "Make him KO or disarm him", 2F);
+        Enemy rival = new Enemy("Your rival", 150, 150, year, "Make him KO or disarm him", 1.5F);
         rival.createEnemyAttack();
         List<AbstractEnemy> enemiesOne = new ArrayList<>();
         enemiesOne.add(rival);
-        Fight FOneYTwo = new Fight(year, enemiesOne, "The year pass by and many disappearances happen. The professors suspect the Chamber of Secret to be open. They decide to set up a duel between students. You are chosen against your principal rival. \nDon't kill your opponent or you'll be expel ! ", 1);
+        Fight FOneYTwo = new Fight(year, enemiesOne, "The year pass by and many disappearances happen. The professors suspect the Chamber of Secret to be open. They decide to set up a duel between students. You are chosen against your principal rival.", 1);
         //Enemies for second fight
         Enemy spidersOne = new Enemy("Spiders",  120, 120, year, "Defeat them ! Spiders flee when they are in the light", 1.5F);
         spidersOne.createEnemyAttack();
@@ -340,7 +340,7 @@ public class Setup {
     public void scholarshipProgress(ArrayList<Year> years, Wizard player, ArrayList<ArrayList<Fight>> fights){
         for (Year year : years){
             year.yearProgress(player);
-            year.StartFights(player, fights.get(0));
+            year.StartFights(player, fights.get(year.getNumberYear()-1));
             player.reward();
         }
     }
