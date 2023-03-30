@@ -1,8 +1,12 @@
 package com.isep.harrypotter;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Scanner;
 
+@Setter @Getter
 public class Utiles {
 
 
