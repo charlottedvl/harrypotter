@@ -48,6 +48,9 @@ public class Wizard extends Character{
         int i=1;
         i = showSpells(this.spells, year, "", i);
         int choice = this.utiles.choice(this.spells.size());
+        System.out.println("Are you sur you want to learn " + this.spells.get(choice-1).getName() + " ?");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
         learnSpell(this.spells.get(choice-1), year);
     }
 
@@ -77,9 +80,6 @@ public class Wizard extends Character{
 
 
     public void learnSpell(Spell spell, Year year){
-        System.out.println("Are you sur you want to learn " + spell.getName() + " ?");
-        System.out.println("1. Yes");
-        System.out.println("2. No");
         int validate = this.utiles.choice(2);
         switch (validate) {
             case 1 -> {
@@ -110,6 +110,9 @@ public class Wizard extends Character{
         int i = 1;
         i = showPotions(this.allPotions, year, "", i);
         int choice = this.utiles.choice(this.allPotions.size());
+        System.out.println("Are you sur you want to learn " + this.allPotions.get(choice-1).getName() + " ?");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
         this.learnPotion(this.allPotions.get(choice-1), year);
     }
 
@@ -131,9 +134,6 @@ public class Wizard extends Character{
         }return i;
     }
     public void learnPotion(Potion potion, Year year){
-        System.out.println("Are you sur you want to learn " + potion.getName() + " ?");
-        System.out.println("1. Yes");
-        System.out.println("2. No");
         int validate = this.utiles.choice(2);
         switch (validate) {
             case 1 -> {
@@ -217,13 +217,14 @@ public class Wizard extends Character{
             this.chooseForbiddenSpell(year, enemy, type);
         } else {
             this.getForbiddenSpells().get(spell-2).useSpellAttack(this, enemy, randomFloat);
-            this.testExpell();
+            float testExpell = random();
+            this.testExpell(testExpell);
         }
     }
 
-    public void testExpell(){
-        float test = random();
-        if (test<= 35F){
+    public void testExpell(float testExpell){
+        if (testExpell<= 35F){
+            this.setStatus("Expelled");
             System.out.println("Someone saw you ! You are expelled from Hogwarts and are sent to Azkaban.\nYou should have been more careful...");
             System.out.println("The Game is over.");
             System.exit(0);
@@ -254,7 +255,6 @@ public class Wizard extends Character{
     public void chooseAttackDefense(Year year, AbstractEnemy enemy){
         System.out.println("Do you want to use defense or attack ? \n1. Attack\n2. Defense");
         int choose = this.utiles.choice(2);
-        String type = "";
         switch (choose) {
             case 1 -> this.chooseWhatUse(year, enemy, "attack");
             case 2 -> this.defend(year, enemy);

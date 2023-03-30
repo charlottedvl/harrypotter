@@ -14,4 +14,5 @@ module com.isep.harrypotter {
     opens com.isep.harrypotter.character.particularities to javafx.fxml;
     exports com.isep.harrypotter.scholarship;
     opens com.isep.harrypotter.scholarship to javafx.fxml;
+
 }

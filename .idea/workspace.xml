@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Fix a problem of order in the print of spells and potions">
+    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Some unitary tests">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/TestUtiles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/character/AbstractEnemyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/character/WizardTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/knowledge/AbstractSpellTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Setup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Setup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Utiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Utiles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Wizard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/scholarship/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/scholarship/Fight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,39 +50,113 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dchar/IdeaProjects/harrypotter&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "C:/Users/dchar/IdeaProjects/harrypotter/src/test/java/com/isep/harrypotter/character",
+    "last_opened_file_path": "C:/Users/dchar/IdeaProjects/harrypotter",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.HelloApplication" />
+}]]></component>
+  <component name="RunManager" selected="JUnit.WizardTest.testLearnPotion">
+    <configuration name="WizardTest.testChooseAttackDefense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="harrypotter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.isep.harrypotter.*" />
+          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.WizardTest" />
+      <option name="METHOD_NAME" value="testChooseAttackDefense" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WizardTest.testChooseForbiddenSpell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="harrypotter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.WizardTest" />
+      <option name="METHOD_NAME" value="testChooseForbiddenSpell" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WizardTest.testChooseSpell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="harrypotter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.WizardTest" />
+      <option name="METHOD_NAME" value="testChooseSpell" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WizardTest.testLearnPotion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="harrypotter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.WizardTest" />
+      <option name="METHOD_NAME" value="testLearnPotion" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WizardTest.testReward" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="harrypotter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.WizardTest" />
+      <option name="METHOD_NAME" value="testReward" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="JUnit.WizardTest.testLearnPotion" />
+        <item itemvalue="JUnit.WizardTest.testReward" />
+        <item itemvalue="JUnit.WizardTest.testChooseSpell" />
+        <item itemvalue="JUnit.WizardTest.testChooseAttackDefense" />
+        <item itemvalue="JUnit.WizardTest.testChooseForbiddenSpell" />
       </list>
     </recent_temporary>
   </component>
@@ -146,7 +222,10 @@
       <workItem from="1679938692289" duration="314000" />
       <workItem from="1679994293438" duration="3024000" />
       <workItem from="1680002821221" duration="1501000" />
-      <workItem from="1680012693156" duration="1962000" />
+      <workItem from="1680012693156" duration="2254000" />
+      <workItem from="1680089614014" duration="260000" />
+      <workItem from="1680166132443" duration="1691000" />
+      <workItem from="1680183476395" duration="11475000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1678195713313</created>
@@ -281,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679933134486</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fix a bug about fight">
+      <created>1680023696514</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1680023696514</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +414,13 @@
     <MESSAGE value="I change a lot of things (syntax...) to make the code clearer" />
     <MESSAGE value="Resolve a problem about fight" />
     <MESSAGE value="Fix a problem of order in the print of spells and potions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix a problem of order in the print of spells and potions" />
+    <MESSAGE value="Fix a bug about fight" />
+    <MESSAGE value="Some unitary tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some unitary tests" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/harrypotter$HelloApplication.ic" NAME="HelloApplication Coverage Results" MODIFIED="1680185338626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.isep.harrypotter.*</FILTER>
+    </SUITE>
   </component>
 </project>
