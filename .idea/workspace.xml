@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Some unitary tests">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/TestSetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/scholarship/YearTest.java" afterDir="false" />
+    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Unitary test for boss and house">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/character/CharacterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Setup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Setup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Boss.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/scholarship/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/scholarship/Year.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/character/WizardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/character/WizardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/AbstractEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/AbstractEnemy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,82 +64,81 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.YearTest.testSkipClassFireworks">
-    <configuration name="TestSetup.testCreateFightYearFive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CharacterTest.testIsDead">
+    <configuration name="BossTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="harrypotter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.isep.harrypotter.*" />
+          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.isep.harrypotter" />
-      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.TestSetup" />
-      <option name="METHOD_NAME" value="testCreateFightYearFive" />
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.BossTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BossTest.testBoss" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="harrypotter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.BossTest" />
+      <option name="METHOD_NAME" value="testBoss" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSetup.testCreateFightYearFour" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BossTest.testBossAccio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="harrypotter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.isep.harrypotter.*" />
+          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.isep.harrypotter" />
-      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.TestSetup" />
-      <option name="METHOD_NAME" value="testCreateFightYearFour" />
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.BossTest" />
+      <option name="METHOD_NAME" value="testBossAccio" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSetup.testSetupFights" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest.testIsDead" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="harrypotter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.isep.harrypotter.*" />
+          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.isep.harrypotter" />
-      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.TestSetup" />
-      <option name="METHOD_NAME" value="testSetupFights" />
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.CharacterTest" />
+      <option name="METHOD_NAME" value="testIsDead" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="YearTest.testSkipClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest.testTestStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="harrypotter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.isep.harrypotter.scholarship.*" />
+          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.isep.harrypotter.scholarship" />
-      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.scholarship.YearTest" />
-      <option name="METHOD_NAME" value="testSkipClass" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="YearTest.testSkipClassFireworks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="harrypotter" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.isep.harrypotter.scholarship.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.isep.harrypotter.scholarship" />
-      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.scholarship.YearTest" />
-      <option name="METHOD_NAME" value="testSkipClassFireworks" />
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.CharacterTest" />
+      <option name="METHOD_NAME" value="testTestStatus" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.YearTest.testSkipClassFireworks" />
-        <item itemvalue="JUnit.YearTest.testSkipClass" />
-        <item itemvalue="JUnit.TestSetup.testSetupFights" />
-        <item itemvalue="JUnit.TestSetup.testCreateFightYearFour" />
-        <item itemvalue="JUnit.TestSetup.testCreateFightYearFive" />
+        <item itemvalue="JUnit.CharacterTest.testIsDead" />
+        <item itemvalue="JUnit.CharacterTest.testTestStatus" />
+        <item itemvalue="JUnit.BossTest" />
+        <item itemvalue="JUnit.BossTest.testBoss" />
+        <item itemvalue="JUnit.BossTest.testBossAccio" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +220,7 @@
       <workItem from="1680089614014" duration="260000" />
       <workItem from="1680166132443" duration="1691000" />
       <workItem from="1680183476395" duration="11532000" />
-      <workItem from="1680244961549" duration="8063000" />
+      <workItem from="1680244961549" duration="11849000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1678195713313</created>
@@ -375,7 +369,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680201347461</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Some unitary tests for setup and year">
+      <created>1680254817441</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1680254817441</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Unitary test for boss and house">
+      <created>1680257145673</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680257145673</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +432,9 @@
     <MESSAGE value="Fix a problem of order in the print of spells and potions" />
     <MESSAGE value="Fix a bug about fight" />
     <MESSAGE value="Some unitary tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some unitary tests" />
+    <MESSAGE value="Some unitary tests for setup and year" />
+    <MESSAGE value="Unitary test for boss and house" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unitary test for boss and house" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/harrypotter$HelloApplication.ic" NAME="HelloApplication Coverage Results" MODIFIED="1680185338626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
