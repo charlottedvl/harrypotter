@@ -30,4 +30,25 @@ public abstract class AbstractEnemy extends Character {
         this.getKnownSpells().get(randomNumber).useSpellAttack(this, player, randomFloat);
     }
 
+    // Obligation to override the function because it can't applicate to enemy or boss.
+    @Override
+    public boolean testStatus() {
+        String status = this.getStatus();
+        boolean test = true;
+        switch (status) {
+            case "Confused1" -> {
+                this.setStatus("OK");
+                test = false;
+            }
+            case "Confused2" -> {
+                this.setStatus("Confused1");
+                test = false;
+            }
+            case "Reduced1" -> {
+                this.setStatus("OK");
+                this.setDamage(this.getDamage() + 0.3F);
+            }
+        }
+        return test;
+    }
 }

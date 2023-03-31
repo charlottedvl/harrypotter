@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Some unitary tests for setup and year">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/character/BossTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/character/particularities/HouseTest.java" afterDir="false" />
+    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Unitary test for boss and house">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/character/CharacterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/AbstractEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/AbstractEnemy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.BossTest">
+  <component name="RunManager" selected="JUnit.CharacterTest.testIsDead">
     <configuration name="BossTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="harrypotter" />
       <extension name="coverage">
@@ -112,7 +112,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BossTest.testCheckVulnerability" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest.testIsDead" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="harrypotter" />
       <extension name="coverage">
         <pattern>
@@ -121,14 +121,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
-      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.BossTest" />
-      <option name="METHOD_NAME" value="testCheckVulnerability" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.CharacterTest" />
+      <option name="METHOD_NAME" value="testIsDead" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BossTest.testCreateAttackBellatrix" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest.testTestStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="harrypotter" />
       <extension name="coverage">
         <pattern>
@@ -137,8 +137,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
-      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.BossTest" />
-      <option name="METHOD_NAME" value="testCreateAttackBellatrix" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.CharacterTest" />
+      <option name="METHOD_NAME" value="testTestStatus" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CharacterTest.testIsDead" />
+        <item itemvalue="JUnit.CharacterTest.testTestStatus" />
         <item itemvalue="JUnit.BossTest" />
         <item itemvalue="JUnit.BossTest.testBoss" />
         <item itemvalue="JUnit.BossTest.testBossAccio" />
-        <item itemvalue="JUnit.BossTest.testCheckVulnerability" />
-        <item itemvalue="JUnit.BossTest.testCreateAttackBellatrix" />
       </list>
     </recent_temporary>
   </component>
@@ -220,7 +220,7 @@
       <workItem from="1680089614014" duration="260000" />
       <workItem from="1680166132443" duration="1691000" />
       <workItem from="1680183476395" duration="11532000" />
-      <workItem from="1680244961549" duration="10512000" />
+      <workItem from="1680244961549" duration="11849000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1678195713313</created>
@@ -376,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680254817441</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Unitary test for boss and house">
+      <created>1680257145673</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680257145673</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,7 +433,8 @@
     <MESSAGE value="Fix a bug about fight" />
     <MESSAGE value="Some unitary tests" />
     <MESSAGE value="Some unitary tests for setup and year" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some unitary tests for setup and year" />
+    <MESSAGE value="Unitary test for boss and house" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unitary test for boss and house" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/harrypotter$HelloApplication.ic" NAME="HelloApplication Coverage Results" MODIFIED="1680185338626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
