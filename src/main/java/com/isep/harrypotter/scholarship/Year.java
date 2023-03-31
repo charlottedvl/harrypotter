@@ -62,12 +62,16 @@ public class Year {
     }
 
     public float SkipClass(float percentSuccess){
-        percentSuccess = (float) (percentSuccess - 0.05);
+        if (percentSuccess < 0.95 && percentSuccess > 0.30){
+            percentSuccess = (float) (percentSuccess - 0.05);
+            }
         return percentSuccess;
     }
 
     public float SkipClassFireworks(float percentFireworks){
-        percentFireworks = (float) (percentFireworks + 0.05);
+        if (percentFireworks < 0.95 && percentFireworks > 0.30){
+            percentFireworks = (float) (percentFireworks + 0.05);
+        }
         return percentFireworks;
     }
 

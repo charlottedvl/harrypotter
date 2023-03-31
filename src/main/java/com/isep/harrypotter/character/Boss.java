@@ -62,19 +62,39 @@ public class Boss extends AbstractEnemy{
     }
 
 
-    public void testBossAccio() {
+    public void testBossAccio(Wizard player) {
         String boss = this.getName();
         if (boss.equalsIgnoreCase("Basilic") || boss.equalsIgnoreCase("Lord Voldemort and the Portekey")){
             this.checkVulnerability();
+            if (this.getVulnerability() == 3){
+                if (player.getHouse().equals("Gryffindor") && boss.equalsIgnoreCase("Basilic")){
+                    System.out.println("You grabbed the sword of Godrick Gryffindor and plant it on the Basilic's heart. It's dead.");
+                } else if (boss.equalsIgnoreCase("Basilic")){
+                    System.out.println("You grabbed the sword of Godrick Gryffindor and plant it on the Basilic's heart. It's dead.");
+                } else {
+                    System.out.println("You attract the portekey. As you touch it, you are send to the labyrinth again. ");
+                }
+            }
         }
     }
 
-    public void testBoss(String name){
+    public void testBoss(String name, Wizard player){
         String boss = this.getName();
         if (boss.equalsIgnoreCase("Troll") && name.equalsIgnoreCase("Wingardium Leviosa")){
             this.checkVulnerability();
         } else if (boss.equalsIgnoreCase("Death Eater") && name.equalsIgnoreCase("Sectumsempra")){
             this.checkVulnerability();
+        } else if (boss.equalsIgnoreCase("Death Eater") && player.getHouse().equals("Serpentard")){
+            System.out.println("The Death Eaters propose you to join them. The dark forces are waiting for your response. What do you want to do ?");
+            System.out.println("1. Join them\n2. Stay with the bright forces");
+            int validate = player.getUtiles().choice(2);
+            switch (validate){
+                case 1 -> {
+                    System.out.println("The Death Eaters welcome you with a cold face.\nYou wonder if you made the right choice or not.\nWhatever you think, it's too late to do anything... You help the Dark Lord to attack Hogwarts. ");
+                    System.exit(0);
+                }
+                case 2 -> System.out.println("");
+            }
         }
     }
 }
