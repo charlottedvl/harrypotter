@@ -214,6 +214,7 @@ public class Setup {
         peterPetitgrow.createAttackBoss();
         List<AbstractEnemy> enemiesBoss = new ArrayList<>();
         enemiesBoss.add(voldemort);
+        enemiesBoss.add(peterPetitgrow);
         Fight FBoss = new Fight(year, enemiesBoss, "Petitgrow has succeeded to reanimate Lord Voldemort ! He needs to be disarm so that you can attract the cup - a Portkey ! - and travel back to the school, where you are in safety. The Portkey is just near Voldemort, focus him to attract the cup", 3);
         //Create the list of fights for the first year
         ArrayList<Fight> fights = new ArrayList<>();

@@ -44,7 +44,7 @@ public class WizardTest {
     @Test
     public void testLearnSpell() {
         Spell spell1 = new Spell("Spell 1", 1, "Description 1", 3, "Type 1", "none", "none");
-        Utiles utiles = new TestUtiles(1); // Utilise TestUtiles au lieu de Utiles
+        TestUtiles utiles = new TestUtiles(1); // Utilise TestUtiles au lieu de Utiles
         Wizard player = new Wizard(utiles, "Test", 100F, 100, 2F);
         Year year = new Year(7, "seventh", "name", "lieu", "advice");
         player.learnSpell(spell1, year);
@@ -161,23 +161,6 @@ public class WizardTest {
         assertEquals(2F, potion2.getValue());
     }
 
-    /*@Test
-    Ne fonctionne pas car choose What Use s'appelle en continu
-    public void testChooseAttackDefense() {
-        TestUtiles utiles = new TestUtiles(2);
-        Wizard player = new Wizard(utiles, "Test", 100F, 100, 2F);
-        Year year = new Year(7, "seventh", "name", "lieu", "advice");
-        Spell spell1 = new Spell("Spell 1", 1F, "Description 1", 3, "defense", "none", "none");
-        Spell spell2 = new Spell("Spell 2", 2F, "Description 2", 3, "defense", "none", "none");
-        Spell spell3 = new Spell("Spell 3", 3F, "Description 3", 3, "defense", "none", "none");
-        player.getKnownSpells().add(spell1);
-        player.getKnownSpells().add(spell2);
-        player.getKnownSpells().add(spell3);
-        AbstractEnemy enemy = new Enemy("Enemy", 100F, 100, year, "advice", 2F);
-        player.chooseAttackDefense(year, enemy);
-        assertEquals(1, utiles.getChoice());
-    }
-*/
 
     @Test
     public void testReward() {

@@ -132,7 +132,7 @@ public abstract class Character {
         float damages = (this.getDamage()*value);
         if (randomFloat <= percent){
             if (opponent instanceof Boss boss){
-                boss.testBoss(name);
+                boss.testBoss(name, (Wizard) this);// If enemy is a boss, then the player is the wizard
             } else {
                 opponent.setHp(opponent.getHp()-damages);
                 boolean isDead = opponent.isDead();
@@ -176,7 +176,7 @@ public abstract class Character {
         String nameCharacter = names[0];
         if (randomFloat <= percent){
             if (opponent instanceof Boss boss) {
-                boss.testBossAccio();
+                boss.testBossAccio((Wizard) this); // It is always a wizard because no enemy has a spell with the effect attire
                 System.out.println(nameCharacter + " succeeded to use " + name + ". ");
             } else {
                 System.out.println(nameCharacter + " failed to find a valid target " + name + ". Nothing happened.");

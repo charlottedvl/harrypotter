@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Some unitary tests">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/TestUtiles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/character/AbstractEnemyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/character/WizardTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/knowledge/AbstractSpellTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/TestSetup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/scholarship/YearTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Utiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Utiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Wizard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Setup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/Setup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Boss.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/scholarship/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/scholarship/Year.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/character/WizardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/isep/harrypotter/character/WizardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,101 +50,101 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_directory_selection": "C:/Users/dchar/IdeaProjects/harrypotter/src/test/java/com/isep/harrypotter/character",
-    "last_opened_file_path": "C:/Users/dchar/IdeaProjects/harrypotter",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/dchar/IdeaProjects/harrypotter/src/test/java/com/isep/harrypotter/character&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dchar/IdeaProjects/harrypotter&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.WizardTest.testLearnPotion">
-    <configuration name="WizardTest.testChooseAttackDefense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+}</component>
+  <component name="RunManager" selected="JUnit.YearTest.testSkipClassFireworks">
+    <configuration name="TestSetup.testCreateFightYearFive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="harrypotter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
+          <option name="PATTERN" value="com.isep.harrypotter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
-      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.WizardTest" />
-      <option name="METHOD_NAME" value="testChooseAttackDefense" />
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.TestSetup" />
+      <option name="METHOD_NAME" value="testCreateFightYearFive" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WizardTest.testChooseForbiddenSpell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSetup.testCreateFightYearFour" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="harrypotter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
+          <option name="PATTERN" value="com.isep.harrypotter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
-      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.WizardTest" />
-      <option name="METHOD_NAME" value="testChooseForbiddenSpell" />
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.TestSetup" />
+      <option name="METHOD_NAME" value="testCreateFightYearFour" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WizardTest.testChooseSpell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSetup.testSetupFights" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="harrypotter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
+          <option name="PATTERN" value="com.isep.harrypotter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
-      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.WizardTest" />
-      <option name="METHOD_NAME" value="testChooseSpell" />
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.TestSetup" />
+      <option name="METHOD_NAME" value="testSetupFights" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WizardTest.testLearnPotion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="YearTest.testSkipClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="harrypotter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
+          <option name="PATTERN" value="com.isep.harrypotter.scholarship.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
-      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.WizardTest" />
-      <option name="METHOD_NAME" value="testLearnPotion" />
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter.scholarship" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.scholarship.YearTest" />
+      <option name="METHOD_NAME" value="testSkipClass" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WizardTest.testReward" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="YearTest.testSkipClassFireworks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="harrypotter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.isep.harrypotter.character.*" />
+          <option name="PATTERN" value="com.isep.harrypotter.scholarship.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.isep.harrypotter.character" />
-      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.character.WizardTest" />
-      <option name="METHOD_NAME" value="testReward" />
+      <option name="PACKAGE_NAME" value="com.isep.harrypotter.scholarship" />
+      <option name="MAIN_CLASS_NAME" value="com.isep.harrypotter.scholarship.YearTest" />
+      <option name="METHOD_NAME" value="testSkipClassFireworks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WizardTest.testLearnPotion" />
-        <item itemvalue="JUnit.WizardTest.testReward" />
-        <item itemvalue="JUnit.WizardTest.testChooseSpell" />
-        <item itemvalue="JUnit.WizardTest.testChooseAttackDefense" />
-        <item itemvalue="JUnit.WizardTest.testChooseForbiddenSpell" />
+        <item itemvalue="JUnit.YearTest.testSkipClassFireworks" />
+        <item itemvalue="JUnit.YearTest.testSkipClass" />
+        <item itemvalue="JUnit.TestSetup.testSetupFights" />
+        <item itemvalue="JUnit.TestSetup.testCreateFightYearFour" />
+        <item itemvalue="JUnit.TestSetup.testCreateFightYearFive" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +225,8 @@
       <workItem from="1680012693156" duration="2254000" />
       <workItem from="1680089614014" duration="260000" />
       <workItem from="1680166132443" duration="1691000" />
-      <workItem from="1680183476395" duration="11475000" />
+      <workItem from="1680183476395" duration="11532000" />
+      <workItem from="1680244961549" duration="8063000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1678195713313</created>
@@ -367,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680023696514</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Some unitary tests">
+      <created>1680201347461</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1680201347461</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
