@@ -10,7 +10,7 @@ public class Wand {
     private Core core;
     private int size;
 
-    public Wand(){
+    public Wand() {
         this.core = Core.values()[new Random().nextInt(Core.values().length)];
         this.size = new Random().nextInt(11) + 10;
     }

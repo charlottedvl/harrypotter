@@ -9,9 +9,8 @@ import java.util.Scanner;
 @Setter @Getter
 public class Utiles {
 
-
-
-    public int choice(int i){
+    //A useful scanner for all the choice made by the player
+    public int choice(int i) {
         Scanner scanner = new Scanner(System.in);
         int choice;
         while (true) {

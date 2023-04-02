@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @AllArgsConstructor
 @Getter @Setter
-public abstract class AbstractSpell{
+public abstract class AbstractSpell {
     private String name;
     private float value;
     private String description;
@@ -16,8 +16,8 @@ public abstract class AbstractSpell{
     private String effectOne;
     private String effectTwo;
 
-
-    public void useSpellAttack(Character characterOne, Character characterTwo, float randomFloat){
+    //Make effect for according to the attack spell used
+    public void useSpellAttack(Character characterOne, Character characterTwo, float randomFloat) {
         characterOne.effectAttack(characterTwo, this.getName(), this.getValue(), this.getEffectOne(), characterOne.getPercentSpells(), randomFloat);
         characterOne.effectAttack(characterTwo, this.getName(), this.getValue(), this.getEffectTwo(), characterOne.getPercentSpells(), randomFloat);
     }
