@@ -10,13 +10,14 @@ public class House {
         Ravenclaw,
         Slytherin
     }
-    public House(){
+    public House() {
         this.name = House.Houses.values()[new Random().nextInt(House.Houses.values().length)];
     }
 
-    public void specificationsHouse(Wizard player){
+    //Add specification according to your house
+    public void specificationsHouse(Wizard player) {
         Houses house = this.name;
-        switch (house){
+        switch (house) {
             case Ravenclaw -> player.setPercentSpells(0.90F);
             case Slytherin -> player.setDamage(1.2F);
             case Gryffindor -> player.setHp(120);

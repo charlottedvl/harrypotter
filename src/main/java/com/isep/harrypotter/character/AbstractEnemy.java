@@ -22,7 +22,8 @@ public abstract class AbstractEnemy extends Character {
         setStatus("OK");
     }
 
-    public void attack(Wizard player){
+    //Attack with one spell from the list of knownSpells
+    public void attack(Wizard player) {
         int lengthSpells = this.getKnownSpells().size();
         Random rand = new Random();
         int randomNumber = rand.nextInt(lengthSpells);

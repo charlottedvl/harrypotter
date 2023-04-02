@@ -13,7 +13,8 @@ import java.util.List;
 
 public class Setup {
 
-    public void createSpells(ArrayList<Spell> spells){
+    //Creation of all the spells available
+    public void createSpells(ArrayList<Spell> spells) {
         Spell incendio = new Spell("Incendio", 40F, "Make a jet of fire to make huge damages to your opponent", 2, "attack", "light", "damages");
         Spell expelliarmus = new Spell("Expelliarmus", 10F, "Disarm an opponent that can't make any damages for a small time", 2, "attack", "confusion", "damages");
         Spell glacius = new Spell("Glacius", 40F, "Freeze the blood of your enemy to make damages", 3, "attack", "damages", "none");
@@ -42,8 +43,8 @@ public class Setup {
         spells.add(sectumsempra);
     }
 
-
-    public void createForbiddenSpell(ArrayList<ForbiddenSpell> forbiddenSpells){
+    //Creation of all the forbidden spells available
+    public void createForbiddenSpell(ArrayList<ForbiddenSpell> forbiddenSpells) {
         ForbiddenSpell avadaKedavra = new ForbiddenSpell("Avada Kedavra", 100000, "Kill immediately", 1, "damages", "none");
         forbiddenSpells.add(avadaKedavra);
         ForbiddenSpell doloris = new ForbiddenSpell("Doloris", 60, "Make someone suffer and provokes damages", 1, "damages", "none");
@@ -52,7 +53,8 @@ public class Setup {
         forbiddenSpells.add(imperio);
     }
 
-    public void createAllPotions(ArrayList<Potion> allPotions){
+    //Creation of all the potions available
+    public void createAllPotions(ArrayList<Potion> allPotions) {
         Potion forgetfulness = new Potion ("Forgetfulness Potion", 0F, "Make your opponent lose memory. it increase confusion, useful when you don't want your enemy to attack !", 1, "attack", "confusion", "none");
         Potion fire  = new Potion ("Fire Potion", 30F, "Create a huge fire that burn enemies and light up the place", 1, "attack", "light", "damages");
         Potion wiggenweld = new Potion ("Wiggenweld Potion", 10F, "A potion that help you heal from your injuries", 1, "defense", "heal", "none");
@@ -79,8 +81,8 @@ public class Setup {
         allPotions.add(garrottingGas);
      }
 
-
-     public ArrayList<Year> setupYears(){
+    //Creation of all the years
+     public ArrayList<Year> setupYears() {
          ArrayList<Year> years = new ArrayList<>();
          Year yearOne = new Year(1, "first", "The Philosopher's Stone", "Dungeon's toilets", "We recommand you to attend the sorcery class as your final exam is a practice exam on the spell Wingardium Leviosa. ");
          years.add(yearOne);
@@ -98,7 +100,9 @@ public class Setup {
          years.add(yearSeven);
          return years;
      }
-    public ArrayList<Fight> createFightYearOne(Year year){
+
+    //Creation of the fights for the first year
+    public ArrayList<Fight> createFightYearOne(Year year) {
         //Enemies for first fight
         Enemy shadowOne = new Enemy("Shadow", 200, 200, year, "Use something that create light to destroy it", 1F);
         shadowOne.createEnemyAttack();
@@ -131,7 +135,8 @@ public class Setup {
         return fights;
     }
 
-    public ArrayList<Fight> createFightYearTwo(Year year){
+    //Creation of the fights for the second year
+    public ArrayList<Fight> createFightYearTwo(Year year) {
         //Enemies for first fight
         Enemy rival = new Enemy("Your rival", 150, 150, year, "Make him KO or disarm him", 1.5F);
         rival.createEnemyAttack();
@@ -161,8 +166,8 @@ public class Setup {
         return fights;
     }
 
-
-    public ArrayList<Fight> createFightYearThree(Year year){
+    //Creation of the fights for the third year
+    public ArrayList<Fight> createFightYearThree(Year year) {
         //Enemies for first fight
         Enemy buckhead  = new Enemy("Buckbead", 300, 300, year, "Use all your spell to make huge damages and defeat it. You will need to protect your from its damages : confuse it !", 3F);
         buckhead.createEnemyAttack();
@@ -190,7 +195,8 @@ public class Setup {
         return fights;
     }
 
-    public ArrayList<Fight> createFightYearFour(Year year){
+    //Creation of the fights for the fourth year
+    public ArrayList<Fight> createFightYearFour(Year year) {
         //Enemies for first fight
         Enemy dragon = new Enemy("Dragon", 350, 350, year, "Make him KO or disarm him", 3.5F);
         dragon.createEnemyAttack();
@@ -224,9 +230,8 @@ public class Setup {
         return fights;
     }
 
-
-
-    public ArrayList<Fight> createFightYearFive(Year year){
+    //Creation of the fights for the fifth year
+    public ArrayList<Fight> createFightYearFive(Year year) {
         //Enemies for first fight
         Enemy dementorOne  = new Enemy("Dementors", 500, 500, year, "Use Expecto Patronum to make them leave ! It is the only spell useful against those enemies.", 4F);
         Enemy dementorTwo  = new Enemy("Dementors", 500, 500, year, "Use Expecto Patronum to make them leave ! It is the only spell useful against those enemies.",4F);
@@ -257,7 +262,8 @@ public class Setup {
         return fights;
     }
 
-    public ArrayList<Fight> createFightYearSix(Year year){
+    //Creation of the fights for the Sixth year
+    public ArrayList<Fight> createFightYearSix(Year year) {
         //Enemies for first fight
         Enemy rival = new Enemy("Your rival", 600, 600, year, "Make huge damages before you make him flee or make him KO. Sectumsempra is very useful...",4.5F);
         rival.createEnemyAttack();
@@ -287,6 +293,7 @@ public class Setup {
         return fights;
     }
 
+    //Creation of the fights for the seventh year
     public ArrayList<Fight> createFightYearSeven(Year year) {
         //Enemies for first fight
         Enemy deathEaterOne = new Enemy("Death Eater", 800, 800, year, "Make damages to kill them !",6F);
@@ -319,7 +326,9 @@ public class Setup {
         fights.add(FBoss);
         return fights;
     }
-    public ArrayList<ArrayList<Fight>> setupFights(List<Year> years){
+
+    //Addition of all the fights
+    public ArrayList<ArrayList<Fight>> setupFights(List<Year> years) {
         ArrayList<Fight> fightsOne = createFightYearOne(years.get(0));
         ArrayList<Fight> fightsTwo = createFightYearTwo(years.get(1));
         ArrayList<Fight> fightsThree = createFightYearThree(years.get(2));
@@ -338,8 +347,9 @@ public class Setup {
         return fights;
     }
 
-    public void scholarshipProgress(ArrayList<Year> years, Wizard player, ArrayList<ArrayList<Fight>> fights){
-        for (Year year : years){
+    //Progress of all the years until the end of the game
+    public void scholarshipProgress(ArrayList<Year> years, Wizard player, ArrayList<ArrayList<Fight>> fights) {
+        for (Year year : years) {
             year.yearProgress(player);
             year.StartFights(player, fights.get(year.getNumberYear()-1));
             player.reward();

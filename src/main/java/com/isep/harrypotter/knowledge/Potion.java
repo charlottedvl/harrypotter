@@ -16,23 +16,14 @@ public class Potion {
     private String effectOne;
     private String effectTwo;
 
-
-
-
-
-
-
-
-
-
-
-
-    public void usePotionAttack(Wizard player, Character characterTwo, float randomFloat){
+    //Make effect for according to the attack potion used
+    public void usePotionAttack(Wizard player, Character characterTwo, float randomFloat) {
         player.effectAttack(characterTwo, this.name, this.value, this.effectOne, player.getPercentPotion(), randomFloat);
         player.effectAttack(characterTwo, this.name, this.value, this.effectTwo, player.getPercentPotion(),randomFloat);
     }
 
-    public void usePotionDefense(Wizard player, Character characterTwo, float randomFloat){
+    //Make effect for according to the defense potion used
+    public void usePotionDefense(Wizard player, Character characterTwo, float randomFloat) {
         player.effectDefense(characterTwo, this.name, this.value, this.effectOne, player.getPercentPotion(), randomFloat);
         player.effectDefense(characterTwo, this.name, this.value, this.effectTwo, player.getPercentPotion(), randomFloat);
     }

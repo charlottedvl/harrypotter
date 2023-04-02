@@ -26,14 +26,11 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
         //launch();
         Utiles utiles = new Utiles();
-        // We initiate the new player
+
         // We get the name;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter your name");
         String name = scanner.nextLine();
-
-
-
 
         // We create the new wizard;
         Wizard player = new Wizard(utiles, name, 100F, 100, 1F);
