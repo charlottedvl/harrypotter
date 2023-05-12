@@ -27,7 +27,7 @@ public class Wizard extends Character {
     private float percentFireworks = 0.30F;
     private Utiles utiles;
 
-    public Wizard(Utiles utiles, String name, float hp, int maxHP, float damage) {
+    public Wizard(String name, float hp, int maxHP, float damage) {
         super(name, hp, maxHP, damage);
         this.pet = Pet.values()[new Random().nextInt(Pet.values().length)];
         this.wand = new Wand();
@@ -38,7 +38,7 @@ public class Wizard extends Character {
         this.forbiddenSpells = new ArrayList<>();
         this.defenseKnownSpells = new ArrayList<>();
         this.allPotions = new ArrayList<>();
-        this.utiles = utiles;
+        this.utiles = new Utiles();
     }
 
     //How a spell class pass by
