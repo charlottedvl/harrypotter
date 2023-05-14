@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1029.0" prefWidth="1413.0" style="-fx-background-image: url('poudlard.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.harrypotter.controler.HelloController">
+<VBox style="-fx-background-image: url('poudlard.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.harrypotter.controler.HelloController">
     <children>
       <GridPane prefHeight="962.0" prefWidth="1413.0">
         <columnConstraints>
@@ -20,7 +20,7 @@
                <top>
                           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="59.0" prefWidth="1316.0" style="-fx-text-alignment: center;" text="Welcome to Harry Potter @ Home ! " textAlignment="CENTER" textFill="#e1b804" BorderPane.alignment="CENTER">
                               <font>
-                                  <Font name="Lucida Fax Demibold" size="48.0" />
+                                  <Font name="Lucida Fax Demibold" size="36.0" />
                               </font>
                           </Label>
                </top>

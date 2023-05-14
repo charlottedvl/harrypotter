@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Add comments">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/controler/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/controler/GetWizard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/controler/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/controler/YourCharacter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/views/GetWizard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/views/YourCharacter.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/views/hello-view.fxml" afterDir="false" />
+    <list default="true" id="01ef7f38-255e-4d85-a5ff-8ee7827bb6fa" name="Changes" comment="Start of javaFX">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/character/Wizard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/isep/harrypotter/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/controler/YourCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isep/harrypotter/controler/YourCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/GetWizard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/GetWizard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/YourCharacter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/YourCharacter.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +243,7 @@
       <workItem from="1683622761401" duration="29000" />
       <workItem from="1683637248869" duration="613000" />
       <workItem from="1683788046905" duration="758000" />
-      <workItem from="1683874748635" duration="1558000" />
+      <workItem from="1683874748635" duration="7364000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1678195713313</created>
@@ -428,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680446504400</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Start of javaFX">
+      <created>1683878197869</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1683878197869</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +480,8 @@
     <MESSAGE value="Unitary test for boss and house" />
     <MESSAGE value="Unitary test for Character and changes on AbstractEnemy" />
     <MESSAGE value="Add comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add comments" />
+    <MESSAGE value="Start of javaFX" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start of javaFX" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/harrypotter$HelloApplication.ic" NAME="HelloApplication Coverage Results" MODIFIED="1680185338626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
